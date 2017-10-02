@@ -53,7 +53,7 @@ shoppingList = [
 
 ### Q!A:
 
-#### What happens when you try to access a non-existant index?
+#### What happens when you try to access a non-existent index?
 
 #### What happens when you try to access a key within a list?
 
@@ -81,7 +81,7 @@ customer = {
 
 ### Tuples
 
-Tuples operate similarly to a list in that they are numerically indexed, except once data has been entered into it, it cannot be changed. This gives us a more secure data structure and may help reduce or prevent errors. 
+Tuples operate similarly to a list in that they are numerically indexed, except once data has been entered into it, it cannot be changed (immutable). This gives us a more secure data structure to protect sensitive information and may help reduce or prevent errors. 
 
 ```python
 stacks = (
@@ -95,3 +95,13 @@ stacks = (
 #### What happens when you try to change the type of a tuple?
 
 #### What happens when you try to change a value in a tuple?
+
+### Which one should I use? A list, dictionary or tuple?
+If you simply want to store data, but dont
+necessarily care about what that data should be named,
+a list is an ideal candidate.
+
+If you are handling sensitive information such as a user's name,
+email or password, consider a tuple to prevent this information from getting into the wrong hands or being replaced by something else.
+
+If you want to categorize data by naming individual fields, consider a dictionary.
