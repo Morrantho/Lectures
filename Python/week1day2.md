@@ -31,11 +31,12 @@ def add(num,num2):
     Lists are like arrays in that they store
     data or multiple values as indices as opposed to key / value pairs.
 
-    ```python
-    def add(num,num2):
-        
-        return num+num2;
-    ```
+    <code>
+        shoppingList = [];
+        shoppingList.append("milk");
+        shoppingList.append("bread");
+        shoppingList.append("eggs");
+    </code>
 </details>
 
 
@@ -43,10 +44,29 @@ def add(num,num2):
     <summary>Dictionaries</summary>
 
     Dictionaries use key / value pairs to map data or values, rather than indices / numbers.
+
+    <code>
+        customer = {
+            "firstName":"John",
+            "lastName":"Smith",
+            "city":"McLean"
+            "state":"VA"
+            "address":"123 Bottleneck Dr."
+        };
+    </code>
 </details>
 
 <details>
     <summary>Tuples</summary>
 
     Tuples operate similarly to a list, except once data has been entered into it, it cannot be changed. This gives us a more secure data structure and may help reduce or prevent errors. 
+
+    <code>
+        stacks = (
+            "Python",
+            "MEAN",
+            "Java",
+            "C#"
+        )
+    </code>
 </details>
