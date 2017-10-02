@@ -19,7 +19,7 @@
 
 Functions let us run a certain portion of our code any number of
 times throughout the lifetime of our application. This allows us
-to reuse code, reducing clutter as well as being able to name it, so we can refer back to it later.
+to reuse code, reducing clutter. We can execute this function (call) by referring to it by its name and invoking it with parenthesis.
 
 Functions can take many or zero arguments, which let us act upon or manipulate the data we've passed into it. They can also give us
 back a result (return), in which we can use elsewhere in our application.
@@ -41,7 +41,7 @@ print add(5,10);
 ### Lists
 
 Lists are like arrays in that they store
-data or multiple values as indices (numbers) as opposed to key / value pairs.
+data or multiple values as indices (numbers) as opposed to key / value pairs (dictionaries).
 
 ```python
 shoppingList = [
@@ -97,6 +97,7 @@ stacks = (
 #### What happens when you try to change a value in a tuple?
 
 ### Which one should I use? A list, dictionary or tuple?
+
 If you simply want to store data, but dont
 necessarily care about what that data should be named,
 a list is an ideal candidate.
