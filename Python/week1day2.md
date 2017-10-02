@@ -30,7 +30,14 @@ def add(num,num2):
 
     Lists are like arrays in that they store
     data or multiple values as indices as opposed to key / value pairs.
+
+    ```python
+    def add(num,num2):
+        
+        return num+num2;
+    ```
 </details>
+
 
 <details>
     <summary>Dictionaries</summary>
