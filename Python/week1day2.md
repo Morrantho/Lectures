@@ -25,44 +25,37 @@ def add(num,num2):
 
 ### How are lists, tuples and dictionaries different?
 
-<details>
-    <summary>Lists</summary>
+### Lists
 
-    Lists are like arrays in that they store
-    data or multiple values as indices (numbers) as opposed to key / value pairs.
+Lists are like arrays in that they store
+data or multiple values as indices (numbers) as opposed to key / value pairs.
 
-    <code>
-        shoppingList = [];
-        shoppingList.append("milk");
-        shoppingList.append("bread");
-        shoppingList.append("eggs");
-    </code>
-</details>
+```python
+shoppingList = [];
+shoppingList.append("milk");
+shoppingList.append("bread");
+shoppingList.append("eggs");
+```
 
-
-<details>
-<summary>Dictionaries</summary>
 Dictionaries use key / value pairs to map data or values, rather than indices (numbers).
-<code>
-    customer = {
-        "firstName":"John",
-        "lastName":"Smith",
-        "city":"McLean"
-        "state":"VA"
-        "address":"123 Bottleneck Dr."
-    };
-</code>
-</details>
 
-<details>
-<summary>Tuples</summary>
+```python
+customer = {
+    "firstName":"John",
+    "lastName":"Smith",
+    "city":"McLean"
+    "state":"VA"
+    "address":"123 Bottleneck Dr."
+};
+```
+
 Tuples operate similarly to a list, except once data has been entered into it, it cannot be changed. This gives us a more secure data structure and may help reduce or prevent errors. 
-<code>
-    stacks = (
-        "Python",
-        "MEAN",
-        "Java",
-        "C#"
-    )
-</code>
-</details>
+
+```python
+stacks = (
+    "Python",
+    "MEAN",
+    "Java",
+    "C#"
+)
+```
