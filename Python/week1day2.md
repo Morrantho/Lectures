@@ -6,13 +6,17 @@
 
 ### Python Fundamentals
 
+* Debugging
+* Functions
+* Data Types
+
 ### How can we debug our Python code?
 
 * Google your errors.
-* print your variables.
-* print your variable types.
-* Comment sections of your code.
-* Goto the line number and <code>.py</code> file the python interpreter tells us has an error.
+* Print your variables.
+* Print your variable types.
+* Comment sections of your code until there is no longer an error.
+* Goto the line number and <code>.py</code> file the interpreter tells us to.
 * Google your errors.
 
 ### Functions
@@ -33,7 +37,8 @@ def add(num,num2):
 # Calling a function:
 print add(5,10);
 
-# Result = 15:
+# Output:
+# 15:
 ```
 
 ### How are lists, tuples and dictionaries different?
