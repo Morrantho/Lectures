@@ -17,18 +17,16 @@
 * Print your variable types.
 * Comment sections of your code until there is no longer an error.
 * Goto the line number and <code>.py</code> file the interpreter tells us to.
-* Google your errors.
+* Read your errors.
 
 ### Functions
 
-<details>
 Functions let us run a certain portion of our code any number of
 times throughout the lifetime of our application. This allows us
 to reuse code, reducing clutter. We can execute (call) this function by referring to it by its name and invoking it with parenthesis.
 
 Functions can take many or zero arguments, which let us act upon or manipulate the data we've passed into it. They can also give us
 back a result (return), in which we can use elsewhere in our application.
-</details>
 
 ```python
 # Defining a function:
@@ -47,10 +45,8 @@ print add(5,10);
 
 ### Lists
 
-<details>
 Lists are like arrays in that they store
 data or multiple values as indices (numbers) as opposed to key / value pairs (dictionaries).
-</details>
 
 ```python
 shoppingList = [
@@ -68,9 +64,7 @@ shoppingList = [
 
 ### Dictionaries
 
-<details>
 Dictionaries use key / value pairs to map data or values, rather than indices (numbers).
-</details>
 
 ```python
 customer = {
@@ -92,9 +86,7 @@ customer = {
 
 ### Tuples
 
-<details>
 Tuples operate similarly to a list in that they are numerically indexed, except once data has been entered into it, it cannot be changed (immutable). This gives us a more secure data structure to protect sensitive information and may help reduce or prevent errors. 
-</details>
 
 ```python
 stacks = (
@@ -111,7 +103,6 @@ stacks = (
 
 ### Which one should I use? A list, dictionary or tuple?
 
-<details>
 If you simply want to store data, but dont
 necessarily care about what that data should be named,
 a list is an ideal candidate.
@@ -120,4 +111,3 @@ If you are handling sensitive information such as a user's name,
 email or password, consider a tuple to prevent this information from getting into the wrong hands or being replaced by something else.
 
 If you want to categorize data by naming individual fields, consider a dictionary.
-</details>
