@@ -20,7 +20,7 @@
 * Code Reuse.
 * Less repeating yourself.
 * Sticking to a convention, which will prevent errors.
-* Encapsulation / Privacy (Hiding data from users so they can tamper with it)
+* Encapsulation / Privacy (Hiding data from users so they cant tamper with it)
 * Ease of use in large-scale applications
 
 ### OOP
