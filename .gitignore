@@ -2,7 +2,6 @@
 *.pdf
 *.odt
 *.docx
-*.py
 curriculum_notes/
 demos/
 group_assignments/
