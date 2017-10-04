@@ -149,11 +149,11 @@ myShoe = Shoe(
 
 #### Package structure / Importing from a package
 
-____myPackage
-    |___ __init__.py
-    |___ myFirstModule.py
-    |___ mySecondModule.py
-    |___ myThirdModule.py
+myPackage
+    __init__.py
+    myFirstModule.py
+    mySecondModule.py
+    myThirdModule.py
 
 ```python
 import myPackage.myFirstModule
@@ -170,7 +170,9 @@ print myFirstModule.sayHello()
 
 #### What happens when you try to import a method or class that doesnt exist within a module?
 
-### Super
+### Inheritance / Super
+
+Inheritance is the process of obtaining all member variables and methods from a class. We can alter these members or methods or even create new ones. This prevents us from having to repeat ourselves. There is no limit to how many subclasses you can have.
 
 Super lets us access a parent class' ORIGINAL members or methods within a child of the parent class. This prevents us from having to rewrite this method in our child class if we just want to set some default values. We could also overwrite that method to give our sub-class it own unique twist of the original implementation.
 
@@ -184,9 +186,13 @@ class Dog(object):
     def bark(self):
         print "{} says {}".format(self.name,self.sound)
 
+# Notice we no longer use object as the first argument in our class declaration.
+# We now substitute "object" with the parent class we intend to inherit from "Dog".
+# This inherits all properties, member variables and methods from our Dog class.
 class Chihuahua(Dog):
     def __init__(self,name,breed,sound):
-        # Calling Dog's Constructor
+        # Calling Dog's Constructor, passing it the name, breed and sound
+        # of our Chihuahua. 
         super(Chihuahua,self).__init__(name,breed,sound);
 
     # Overriding Dog's bark method
@@ -200,3 +206,7 @@ class Mastiff(Dog):
     def bark(self):
         print self.name+" says "+self.sound.upper();
 ```
+
+### Q!A:
+
+#### What happens when you dont pass arguments to a parent class' method that requires arguments?
