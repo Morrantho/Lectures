@@ -209,3 +209,35 @@ class Mastiff(Dog):
 ### Q!A:
 
 #### What happens when you dont pass arguments to a parent class' method that requires arguments?
+
+### Varargs / KWargs
+
+Varargs are a variable amount of arguments that we can pass to a function as a single argument. This can keep our function declaration shorter. We can also pass in a few arguments and then allow for variable arguments after.
+
+KWargs are also a variable amount of arguments that we can specify as key / value pairs like a dictionary. This way we can have variable arguments, but also have the benefit of being able to expect certain keys within a function.
+
+```python
+# The * symbol before our parameter's name indicates that it should allow for variable arguments
+def myVarArgs(*args):
+    # Loop through our arguments and print each of their values.
+    for i in args:
+        print i
+
+# Two ** symbols indicate we want to accept Multiple named arguments or KWargs.
+def myKwargs(**args):
+    for i in args:
+        if i == "firstName":
+            print "First Name: "+args[i]
+        elif i == "lastName":
+            print "Last Name: "+args[i]        
+        elif i == "address":
+            print "Address: "+args[i]
+
+myVarArgs(20,30,40)
+
+myKwargs(
+    firstName="John",
+    lastName="Smith",
+    address="123 Dojo Ave."
+)
+```
