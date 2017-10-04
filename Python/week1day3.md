@@ -29,10 +29,9 @@ OOP (Object Orientated Programming) is a paradigm in which we organize data into
 OOP allows us to create our own data types (classes), letting us specify
 exactly what it is that we need for a certain situation. 
 
-Consider a class Shoe. Each shoe has its own distinctions about it, such as it's color, size, brand, style, lace color, patterns, etc. These would be known as the shoe's members or attributes. (Please call them members) We could also say that each shoe could perform an action when acted upon
+Consider a class Shoe. Each shoe has its own distinctions about it, such as it's color, size, brand, style, lace color, patterns, etc. These would be known as the shoe's members or attributes. We could also say that each shoe could perform an action when acted upon
 such as wear, unwear, tie, untie, display. These would be known as the shoe's
 methods, which are just functions belonging to only a shoe.
-
 
 ### Defining a class
 
@@ -67,14 +66,14 @@ methods, which are just functions belonging to only a shoe.
             print "{} {}'s are somehow running! {} steps have been taken so far!".format(self.brand,self.model,self.steps)
 
             return self
+
         def display(self):
-            print "Brand: {}\n Model:{}\n Color:{}\n Size:{}\n Is Being Worn: {}\n Laces Tied:{}".format(
+            print "Brand: {}\n Model:{}\n Color:{}\n Size:{}\nLaces Tied:{}".format(
                 self.brand,
                 self.model,
                 self.color,
                 self.size,
-                self.isWorn,
-                self.lacesTied
+                self.tied
             )
 ```
 
@@ -123,7 +122,7 @@ Any <code>.py</code> file can be a python module. Simply use import followed by 
 to import it into your project. This copies the contents the your module into the file you imported
 it into. You can also import certain parts of a module, such as one function or class in particular. This prevents us from importing a large portion of code that we may never need or use.
 
-We can also create packages, which are just multiple modules or <code>.py</code> files within a folder. We must also provide a <code>__init__.py</code> inside our pacakge folder to let python know it's a valid package. It can be a blank file, or you can override the <code>__all__</code>
+We can also create packages, which are just multiple modules or <code>.py</code> files within a folder. We must also provide a __init__.py inside our package folder to let python know it's a valid package. It can be a blank file, or you can override the __all__
 magic method to export specific files within your package.
 
 #### Importing a module
