@@ -26,7 +26,7 @@ A framework allows us to have a core foundation or functionality that we can alt
 <br>
 <details>
 <summary><strong>What are routes and how do we use them in Flask?</strong></summary>
-Routing is the process of instructing our server to perform a given task based on the URL a client has visited. Generally, most frameworks will use an annotation or decorator to indicate what route you intend to go. Underneath this annotation, we must specify a function or callback, which is the logic that gets run once a client visits our route.
+Routing is the process of instructing our server to perform a given task based on the URL a client has visited. Some but not all web frameworks will use an annotation or decorator to indicate what route you are creating. Underneath this annotation, we must specify a function or callback, which is the logic that gets run once a client visits this route.
 </details>
 
 ### Virtual Environments
