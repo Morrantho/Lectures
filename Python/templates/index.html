@@ -2,13 +2,20 @@
 <html>
 <head>
     <title>Hello World</title>
-    <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
 <body>
+        {%for message in get_flashed_messages()%}
+                <p>{{message}}</p>
+        {%endfor%}
+
         <h1>Hey there! Tell us a little about yourself:</h1>
 
         <form action="/process" method="post">
-                <input type="text" name="firstName">
+                <label for="userName">First Name:
+                        <input type="text" name="firstName" id="userName">
+                </label>
+                <input type="hidden" name="userId">
+                <input type="submit">
         </form>
 </body>
 </html>

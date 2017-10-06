@@ -20,25 +20,30 @@ Session allows us to persist data or variables across HTTP requests. This allows
 ### Session, POST and Flash:
 
 ```python
-from flask import Flask,request,redirect,flash,session
+from flask import Flask,request,redirect,flash,session,render_template
+
 app = Flask(__name__)
 app.secret_key = "hideme"
 
 @app.route("/")
 def index():
-        if not "name" in session:
-                return render_template("index.html")
-        else:
-                return render_template("welcome.html")
+        return render_template("index.html")
 
 @app.route("/process",methods=["POST"])
 def process():
         if len(request.form["firstName"]) < 1:
-                flash("Name must be at least 1 character in length!")
-        else:
-                session["name"] = request.form["firstName"]
+                flash("First name must be at least 1 character in length!")
+                return redirect("/")
 
-        return redirect("/")
+        session["name"] = request.form["firstName"]
+        return redirect("/welcome")        
+
+@app.route("/welcome")
+def welcome():
+        if not "name" in session:
+                return redirect("/");
+        return render_template("welcome.html");
+
 app.run(debug=True)
 ```
 
@@ -50,4 +55,9 @@ app.run(debug=True)
 <summary><strong>What are hidden inputs? How can we use them to our advantage?</strong>
 </summary>
 Hidden inputs are hidden from the user whom is viewing that <code>.html</code> file. We can take advantage of that and store data such as that particular user's name or id as attributes that we can access on our server via a form submission.
+</details>
+
+<details>
+<summary>What is Flash and what are Flash Messages?</summary>
+Flash messages are messages we can display to users based off of conditions in our views such as if they forgot to input something into a form we've created. Flash messages use session to do this and only last for one Request and Response cycle. We can then display these messages on any of our templates, checking for their existance.
 </details>
