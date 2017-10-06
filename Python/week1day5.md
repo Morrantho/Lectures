@@ -17,7 +17,7 @@
 Session allows us to persist data or variables across HTTP requests. This allows us to access data we may have previously stored, or store that data for future use. A practical example of this is keeping track of a user's cart they may have added products into. If we didnt do this, each time they refreshed the page or navigated elsewhere, their cart items would vanish!
 </details>
 
-### Using Session:
+### Session, POST and Flash:
 
 ```python
 from flask import Flask,request,redirect,flash,session
@@ -26,17 +26,19 @@ app.secret_key = "hideme"
 
 @app.route("/")
 def index():
-        return render_template("index.html");
+        if not "name" in session:
+                return render_template("index.html")
+        else:
+                return render_template("welcome.html")
 
 @app.route("/process",methods=["POST"])
-def process():        
-        if len(request.form["name"]) < 1:
+def process():
+        if len(request.form["firstName"]) < 1:
                 flash("Name must be at least 1 character in length!")
         else:
-                flash("Thanks for signing up,{}".format(request.form["name"))
+                session["name"] = request.form["firstName"]
 
         return redirect("/")
-
 app.run(debug=True)
 ```
 
