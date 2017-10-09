@@ -42,38 +42,45 @@ Many To Many:
 
 ### MySQL Data Types:
 
-Numeric Data Types:
 
 * VARCHAR(number of characters)
+
 Variable number of Non-numeric characters up to 255 characters.
 Uses only up the number of characters in space.
 
 * CHAR(number of characters)
+
 Stores non-numeric characters
 Users up all space for the number of characters.
 
 * INT
+
 Used to store integers. 
 Unsigned: 0 - 4294967295.
 Signed: -2147483648 - 2147483647.
 
 * BIGINT
+
 BIGINT would be used for columns that would need to store huge numbers.
 Unsigned: 0 - 18446744073709551615
 Signed: -9223372036854775807 to 9223372036854775808
 
 * TINYINT
+
 TINYINT would be good to use for numbers that will be relatively small.
 Unsigned: 0 - 255
 Signed: -127 - 127
 
 * FLOAT
+
 Used to store floating point numbers (decimals)
 such as the cost of an item.
 
 * TEXT
+
 Used to store a large amount of text, like a description, message, or comment. Use this for any text that VARCHAR() is too small to handle.
 
 * DATETIME
+
 used to store a date and time in the format YYYY-MM-DD hh:mm:ss
 
