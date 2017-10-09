@@ -38,6 +38,7 @@ This query will look through all last names in our users table, searching for "S
 
 We can use INSERT to insert new data into a particular table. We need to supply the table name with the column names we intend to fill in, as well as the VALUES keyword, containing the the data we want to store.
 
+
 ```mysql
 INSERT INTO users(first_name,last_name)
 VALUES("John","Smith"); 
@@ -47,7 +48,42 @@ This query will create a new user in our users table, filling in the first_name 
 
 ### UPDATE
 
+We can use UPDATE to change data in a particular table. We need to supply update with the table we intend to change data, followed by SET. SET needs to be supplied with the column names we wish to change. Now we can use WHERE to specify columns we wish to change. 
+
+
+```mysql
+UPDATE users 
+SET first_name="Joe",last_name="Schmoe" 
+WHERE first_name = "John" AND last_name = "Smith";
+```
+
+This query will look in our users table for the first and last names "John" and "Smith". If it finds columns, it will set the first_name and last_name attributes of those columns to "John" and "Smith". 
+
+#### What happens if we forget to supply a WHERE clause when we UPDATE?
+We will end up overwriting all columns in that table with the new data we've supplied. 
+
 ### DELETE
+
+We can use DELETE to delete data in a particular table. We first need to specify the table to delete data from, followed by a WHERE clause to specify the columns we wish to delete.
+
+```mysql
+DELETE FROM user 
+WHERE first_name="Joe" AND last_name="Schmoe";
+```
+
+### What happens if we dont supply DELETE with a WHERE clause?
+We'll delete all of the columns in our table!!
 
 ### JOIN
 
+Consider that we've created another table called addresses that contains a users city,state and steet as well as a user_id. Also, we've added an address_id to our original user's table. How would we be able to find a particular user's address based off of just an id / number? Enter Joins.
+
+Joins allow us to merge two or more tables together, to obtain more data. Typically, we tell the primary keys in one table to match the foreign key id's in another table. In turn this "joins" these two tables together, allowing us to retrieve data we need from both or all of those tables.
+
+
+```mysql
+SELECT * FROM users
+JOIN addresses ON addresses.id=users.address_id;
+```
+
+This query will match users address ids from our users table and user ids from our addresses table. If it finds a match, we will receive each user's address information (city, state, street) as well as their user information (first_name,last_name). 
