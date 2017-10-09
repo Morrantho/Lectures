@@ -1,8 +1,8 @@
-# Week 2 Day 1
+# Week 2 Day 2
 
 ## MySQL
 
-<img src="https://cdn.iconverticons.com/files/png/7fbe544b039fd4f3_256x256.png" alt="MySQL Workbench Icon" width="200px">
+<img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL Icon" width="200px">
 
 * SQL Statements
 * SELECT
