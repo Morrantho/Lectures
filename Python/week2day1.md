@@ -2,7 +2,7 @@
 
 ## MySQL Workbench
 
-<img src="https://commons.wikimedia.org/wiki/File%3AAntu_mysql-workbench.svg" alt="MySQL Workbench Icon" width="200px">
+<img src="https://cdn.iconverticons.com/files/png/7fbe544b039fd4f3_256x256.png" alt="MySQL Workbench Icon" width="200px">
 
 * ERD Diagrams
 * Entity Relationships
