@@ -12,7 +12,7 @@
 
 ### Request and Response Cycle
 
-<img src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/C06104a2bdb987778c33f673cd5cbde75/projects/D8ab61f7909f9dc39a7101f5695b6693f/pages/c330159f6a00463798773d0fec45cfe6/image/c330159f6a00463798773d0fec45cfe6.png" alt="Request Response" width="400px">
+<img src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/C06104a2bdb987778c33f673cd5cbde75/projects/D8ab61f7909f9dc39a7101f5695b6693f/pages/c330159f6a00463798773d0fec45cfe6/image/c330159f6a00463798773d0fec45cfe6.png" alt="Request Response" width="800px">
 
 ### Controllers
 
