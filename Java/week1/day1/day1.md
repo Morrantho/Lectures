@@ -6,10 +6,11 @@
 
 ### Course Overview
 
-* Fundamentals
-* OOP
-* On The Web
-* Spring
+* Fundamentals: Day 1
+* OOP: Day 2 - Day 3
+* On The Web: Day 4.25
+* Spring: Day 4.25 - Day 9
+* Deployment: Day 10
 
 ### Useful Plugins:
 
