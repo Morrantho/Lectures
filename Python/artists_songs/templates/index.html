@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Songs and Artists</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>Song:</td>
+			<td>Artist:</td>
+			<td>Popularity:</td>
+			<td>Genre:</td>
+		</tr>
+
+		{%for artist_song in artists_songs%}
+			<tr>
+				<!-- We have access to these specific column names since we aliased them via our join query -->
+				<td>{{artist_song.artistName}}</td>
+				<td>{{artist_song.songName}}</td>
+				<td>{{artist_song.popularity}}</td>
+				<td>{{artist_song.genre}}</td>
+			</tr>
+		{%endfor%}
+	</table>
+
+	<br><br><br>
+
+	<!-- Create song POST route -->
+	<form action="/songs/new" method="post">
+		<input type="text" name="name" placeholder="Song Name">
+		<input type="number" name="popularity" placeholder="Popularity">
+
+		<input type="submit" value="Create Song">
+	</form>
+
+	<br><br><br>
+
+	<!-- Create artist POST route -->
+	<form action="/artists/new" method="post">
+		<input type="text" name="name" placeholder="Artist Name">
+		<input type="text" name="genre" placeholder="Genre">
+
+		<input type="submit" value="Create Artist">
+	</form>
+
+	<br><br><br>
+
+	<!-- Route for associating a song to an artist or artist to a song. (Many To Many) -->
+	<form action="/assign" method="post">
+		<select name="artistId">
+			{%for artist in artists%}
+				<option value="{{artist.id}}">{{artist.name}} {{artist.genre}}</option>
+			{%endfor%}
+
+		</select>
+
+		<select name="songId">
+			{%for song in songs%}
+				<option value="{{song.id}}">{{song.name}} {{song.popularity}}</option>
+			{%endfor%}			
+		</select>
+
+		<input type="submit">
+	</form>
+</body>
+</html>

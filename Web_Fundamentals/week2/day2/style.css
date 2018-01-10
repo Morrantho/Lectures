@@ -1,0 +1,39 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 1px dotted black;
+}
+
+#wrapper{
+	width:80%;
+	margin:0 auto;
+	background-color: grey;
+}
+
+#nav{
+	height: 33.3%;
+	background-color: yellow;
+}
+
+#header{
+	height: 20vh;
+	background-color: red;
+}
+
+#main{
+	background-color: green;
+	height: 58vh;
+}
+
+#main *{
+	background-color: pink;
+}
+
+#footer{
+	height: 20vh;
+	background-color: blue;
+}
+
+.orange{
+	background-color: orange;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		// Variables:
+		// Numbers:
+		var myPosition   = 3;
+		var yourPosition = 3;
+		var chance       = 0;
+
+		// Strings:
+		var greeting = "Hello!";
+		var response = "How's it going?";
+
+		// Booleans:
+		var hasGreeted = false;
+
+		// Printing:
+		// console.log("Hello World ",hasGreeted);
+
+		// Conditionals:
+
+		// ==
+		// !=
+		// >=
+		// <=
+		// >
+		// <
+		// ===
+		// !==
+
+		// if("123" === 123){
+		// 	console.log("Thats strange");
+		// }
+
+		// if("123" == 123){
+		// 	console.log("These are the same");
+		// }
+
+		// if(myPosition != yourPosition){
+		// 	console.log("We're in the same spot!");
+		// }
+
+		// switch(chance){
+		// 	case 1:
+		// 		console.log("The number is 1");
+		// 	case 2:
+		// 		console.log("The number is 2");
+		// 	case 3:
+		// 		console.log("The number is 3");
+		// 	case 5:
+		// 		console.log("Your a winner!");
+		// 	default:
+		// 		console.log("No conditions we're met.");
+		// }
+
+
+		// Loops:
+
+		// For Loop:
+
+		// for(var  i=0 ; i < 100; i+= 2){
+		// 	console.log(i);
+		// }
+
+		// for(var i=0; i < yourPosition; i++ ){
+		// 	console.log("Taking a step forward...");
+		// 	myPosition++;
+		// }
+
+		// While loop
+
+		while( !hasGreeted ){
+			if( myPosition != yourPosition ){
+				console.log("Taking a step backward...");
+				myPosition--;
+			}else{
+				console.log("Me:"+greeting);
+				console.log("You:"+response);
+				console.log("Me: Should I go grocery shopping?");
+				
+				hasGreeted = true;
+				
+				// Generate a number between 1-10
+				chance = 1+Math.random()*10;
+				// Round it down.
+				chance = Math.floor(chance);
+
+				// If its 1-5, call shop().
+				if(chance >= 1 && chance <= 5){
+					console.log("You: Yes!");
+					console.log("Me: Okay!");
+					console.log("Me: Here's what I bought:");
+					
+					var groceries = [
+						"Milk",
+						"Bread",
+						"Eggs"
+					];
+
+					var items = shop(groceries);
+
+					for(var i=0; i < items.length; i++){
+						console.log(items[i]);
+					}
+				}else{
+					console.log("You: No!");
+					console.log("Me: Alright, I can go tomorrow.");
+				}
+			}
+		}
+
+		// Arrays & Functions
+
+		function shop(groceryList){
+			var cart = [];
+
+			var isFull = cart.length == groceryList.length;
+			var count = 0;
+
+			while( !isFull  ){
+				var item = groceryList[count];
+
+				cart.push(item);
+				count++;
+				isFull = cart.length == groceryList.length;
+			}
+
+			return cart;
+		}
+
+	</script>
+
+</body>
+</html>

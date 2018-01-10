@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+	/*border: 1px dotted red;*/
+}
+
+body{
+	background-color: rgb(16,16,16);
+}
+
+#wrapper{
+	height: 100vh;
+	width: 75%;
+	margin: 0 auto;
+}
+
+#header{
+	height:25%;
+	background-color: rgba(64,64,64,.5);
+}
+
+#nav{
+	height: 25%;
+	background-color: rgba(24,24,24,.5);
+	display: flex;
+}
+
+.btn{
+	width:20%;
+	height: 100%;
+	text-align: center;
+	color: white;
+	background-color: rgb(24,24,24);
+	border: 1px solid red;
+}
+
+#main{
+	height: 50%;
+	background-color: rgba(32,32,32,.5);
+}
+
+#footer{
+	height:25%;
+	background-color: rgba(64,64,64,.5);
+}
+
+.active{
+	background-color: red;
+}
+
+.nonActive{
+	background-color: grey;
+}

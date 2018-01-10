@@ -1,0 +1,112 @@
+*{
+	border:1px dashed red;
+	padding:0;
+	margin:0;
+}
+
+#wrapper{
+	width: 1000px;
+	margin:0 auto;
+}
+
+#header{display: flex;}
+#headerMainText{width:10%;}
+#headerText{margin-left: 75%;}
+
+#main{
+	background-color: #614C56;
+	padding: 2.5%;
+}
+
+#bioPic{
+	width: 50%;
+	height: 100%;
+	border: 4px solid grey;
+	margin-right: 1.25%
+}
+
+#top{display: flex;}
+
+#bottom{
+	display: flex;
+	margin-top: 2.5%;
+}
+
+#about{
+	width: 50%;
+	margin-left: 1.25%;
+}
+
+.greyMedium{
+	background-color: grey;
+	height: 72px;
+}
+
+.greyHeader{
+	font-weight: bold;
+	background-color: darkgrey;
+	height: 32px;
+}
+
+.text{
+	color: white;
+	height: 75%;
+	vertical-align: middle;
+	padding: 4px;
+}
+
+.primaryContent{width: 33%;}
+.white{background-color: white;}
+
+.whiteText{
+	color: white;
+	font-weight: bold;
+	height: 32px;
+	border-radius: 8px;
+}
+
+#contacts{
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+
+.imgContent{width: 100%;}
+.contentText{text-align: center;}
+
+.icons{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.icons img{
+	width: 14.25%;
+	height: 14.25%;
+	margin: 1.25%;
+	padding: 1.25%;
+}
+
+.btn{
+	background-color: #407D61;
+	border: 1px solid #1D4533;
+	width: 33%;
+	margin:16px auto;
+}
+
+#footer{
+	width:100%;
+	margin:0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#footer img{
+	width: 16px;
+	height: 16px;
+}
+
+#footerCenter{
+	width: 33.3%;
+	margin:0 auto;
+}
+
+#contactInfo{text-align: center;}

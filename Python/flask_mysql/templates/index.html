@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Owners and Pets</title>
+</head>
+<body>
+	{%with errs = get_flashed_messages()%}
+		{%if errs%}
+			{%for err in errs%}
+				<p>{{err}}</p>
+			{%endfor%}
+		{%endif%}
+	{%endwith%}
+
+	<h1>Owners:</h1>
+
+	<table border="1">
+		<tr>
+			<td>Name</td>
+			<td>Email</td>
+		</tr>
+
+		{%for owner in owners%}
+			<tr>
+				<td>{{owner.name}}</td>
+				<td>{{owner.email}}</td>
+			</tr>
+		{%endfor%}
+	</table>
+
+	<br>
+
+	<form action="/owners/new" method="post">
+		<p><label>Name:
+			<input type="text" name="name">
+		</label></p>
+
+		<p><label>Email:
+			<input type="text" name="email">
+		</label></p>
+
+		<p><input type="submit" value="Create Owner"></p>
+	</form>
+</body>
+</html>

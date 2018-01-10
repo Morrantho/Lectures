@@ -1,0 +1,12 @@
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/services/CategoryProductService.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/models/Category.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/services/CategoryService.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/repositories/CategoryRepository.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/controllers/CategoryController.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/models/CategoryProduct.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/categories_productsApplication.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/controllers/ProductController.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/repositories/CategoryProductRepository.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/repositories/ProductRepository.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/services/ProductService.java
+/home/tony/Documents/Lectures/Java/week2/day3/categories_products/src/main/java/com/project/categories_products/models/Product.java

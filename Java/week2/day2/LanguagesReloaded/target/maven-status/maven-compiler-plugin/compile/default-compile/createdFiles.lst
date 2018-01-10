@@ -1,0 +1,5 @@
+com/project/LanguagesReloaded/LanguagesReloadedApplication.class
+com/project/LanguagesReloaded/repositories/LanguageRepository.class
+com/project/LanguagesReloaded/controllers/LanguageController.class
+com/project/LanguagesReloaded/models/Language.class
+com/project/LanguagesReloaded/services/LanguageService.class

@@ -1,0 +1,16 @@
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/controllers/UserController.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/models/Comment.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/services/UserService.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/eventsApplication.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/config/WebSecurityConfig.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/repositories/UserRepository.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/repositories/EventRepository.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/services/EventService.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/services/CommentService.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/models/Event.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/services/UserDetailsServiceImplementation.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/models/User.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/models/Role.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/validators/UserValidator.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/repositories/CommentRepository.java
+/home/tony/Documents/Lectures/Java/week3/day3/events/src/main/java/com/project/events/repositories/RoleRepository.java

@@ -1,70 +1,60 @@
 public class Animal{
-	private String name;
-	private int numLegs;
-	private String species;
-	private String gender;
-	private String diet;
+	private int limbs = 0;	
+	private int legs = 0;
+	private String name = "";
+	private String species = "";
+	private boolean gender = false;
 
 	public Animal(){
 
 	}
 
-	public Animal(String name, int numLegs, String species, String gender, String diet){
-		this.name=name;
-		this.numLegs=numLegs;
-		this.species=species;
-		this.gender=gender;
-		this.diet=diet;
+	public Animal(int g,int h,String i,String j,boolean k){
+		limbs = g;
+		legs  = h;
+		name  = i;
+		species = j;
+		gender = k;
 	}
 
-	public Animal(String name,int numLegs){
-		this.name=name;
-		this.numLegs=numLegs;
+	public void setLimbs(int limbs){
+		this.limbs = limbs;
+	}
+	public int getLimbs(){
+		return limbs;
 	}
 
-	public void walk(){
-		System.out.println("*Muffled Footsteps*");
+	public void setLegs(int legs){
+		this.legs = legs;
+	}
+	public int getLegs(){
+		return legs;
 	}
 
-	public void sleep(){
-		System.out.println("*Zzzzzzzz*");
+	public void setName(String name){
+		this.name = name;
 	}
-
-	public void eat(){
-		System.out.println("*nom nom*");
-	}
-
-	public void setName(String value){
-		this.name=value;
-	}
-	public void setSpecies(String value){
-		this.species=value;
-	}
-	public void setGender(String value){
-		this.gender=value;
-	}
-	public void setDiet(String value){
-		this.diet=value;
-		
-	}
-	public void setNumLegs(int value){
-		this.numLegs=value;
-	}
-
 	public String getName(){
-		return this.name;
+		return name;
+	}
+
+
+	public void setSpecies(String species){
+		this.species=species;
 	}
 	public String getSpecies(){
-		return this.species;
-	}
-	public String getGender(){
-		return this.gender;
-	}
-	public String getDiet(){
-		return this.diet;		
-	}
-	public int getNumLegs(){
-		return this.numLegs;
+		return species;
 	}
 
+	public void setGender(boolean gender){
+		this.gender = gender;
+	}
+
+	public String getGender(){
+		if(gender){
+			return "Male";
+		}else{
+			return "Female";
+		}
+	}
 }

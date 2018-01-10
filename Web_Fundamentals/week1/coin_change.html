@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function coinChange(c){ 
+			var quarters = Math.floor(c / 25); 
+			c -= quarters*25; 
+			var dimes = Math.floor(c / 10); 
+			c -= dimes*10;
+			var nickels = Math.floor(c / 5);
+			c -= nickels*5;
+			var pennies = c / 1;
+			c -= pennies; 
+
+			console.log(
+				"Quarters:"+quarters,
+				"Dimes:"+dimes,
+				"Nickels:"+nickels,
+				"Pennies:"+pennies
+			);
+		}
+
+		coinChange(94);
+	</script>
+</body>
+</html>

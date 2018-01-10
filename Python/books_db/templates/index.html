@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books</title>
+</head>
+<body>
+	<fieldset>
+		<legend><h1>My Books</h1></legend>
+	
+		<table border="1">
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Date Added</th>
+				<th>Action</th>
+			</tr>
+
+			{%for book in books%}
+				<tr>
+					<td>{{book.title}}</td>
+					<td>{{book.author}}</td>
+					<td>{{book.createdAt}}</td>
+					<td><a href="/books/delete/{{book.id}}">Delete</a></td>
+				</tr>
+			{%endfor%}
+		</table>
+
+	</fieldset>
+
+	<a href="/add"><button>Add A Book</button></a>
+</body>
+</html>
