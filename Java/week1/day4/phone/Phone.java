@@ -23,7 +23,9 @@ public abstract class Phone{
 	public static void main(String[] args) {
 		Galaxy s5 = new Galaxy(6,123,70,"Samsung","Verizon","Buzzzzzz");
 		Galaxy s6 = new Galaxy(6,456,50,"Samsung","Verizon","Bizzzzz");
+		IPhone sixS = new IPhone(6,789,80,"Apple","AT&T","Zing");
 
 		s5.ring();
+		sixS.answer();
 	}
 }

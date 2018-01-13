@@ -17,7 +17,7 @@ public class Galaxy extends Phone{
 
 	public void ring(){
 		if( blewUp() ){
-			System.out.println( "This phone is awful" );
+			System.out.println( "*Your phone blows up*" );
 		}else{
 			System.out.println( ringTone );
 		}
