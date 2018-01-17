@@ -30,13 +30,34 @@ public class ActivityController{
 
 	}
 	
+	public void reverse(ArrayList<Activity> list){
+		Activity temp;
+
+		for(int i=0,j=list.size()-1;i < list.size()/2; i++,j--){
+			temp = list.get( i );
+			list.set( i, list.get( j ) );
+			list.set( j, temp );
+		}
+	}
+
 	@RequestMapping("")
 	public String activities(HttpSession session){
 		if( session.getAttribute("activities") == null || session.getAttribute("gold") == null ){
 			ArrayList<Activity> activities = new ArrayList<Activity>();
 			session.setAttribute("activities",activities);
 			session.setAttribute("gold",0);
+			session.setAttribute("lastSize",0);
 		}
+
+		int lastSize = (int)session.getAttribute("lastSize");
+		ArrayList<Activity> activities = (ArrayList<Activity>)session.getAttribute("activities");
+
+		if(lastSize != activities.size()){
+			session.setAttribute("lastSize",activities.size());
+			reverse( activities );
+		}
+
+		session.setAttribute("activities",activities);
 
 		return "activities";
 	}

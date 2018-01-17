@@ -22,6 +22,20 @@
 				height: 50vh;
 				overflow: scroll;
 			}
+
+			.green{
+				color: green;
+			}
+
+			.red{
+				color:red;
+			}
+
+			.activity{
+				width:96px;
+				height: 96px;
+				background-color: grey;
+			}
 		</style>
 	</head>
 
@@ -29,25 +43,25 @@
 		<h1>Your Gold: ${ gold }</h1>
 
 		<div class="locations">
-			<form action="/activities/new" method="post">
+			<form class="activity" action="/activities/new" method="post">
 				<h1>Farm</h1>
 				<h4>(earns 10-20 gold)</h4>
 				<input type="submit" name="farm" value="Find Gold!" />
 			</form>
 
-			<form action="/activities/new" method="post">
+			<form class="activity" action="/activities/new" method="post">
 				<h1>Cave</h1>
 				<h4>(earns 5-10 gold)</h4>
 				<input type="submit" name="cave" value="Find Gold!"/>
 			</form>
 
-			<form action="/activities/new" method="post">
+			<form class="activity" action="/activities/new" method="post">
 				<h1>House</h1>
 				<h4>(earns 2-5 gold)</h4>
 				<input type="submit" name="house" value="Find Gold!"/>
 			</form>
 
-			<form action="/activities/new" method="post">
+			<form class="activity" action="/activities/new" method="post">
 				<h1>Casino</h1>
 				<h4>(earns or takes 0-50 gold)</h4>
 				<input type="submit" name="casino" value="Find Gold!"/>
@@ -57,8 +71,15 @@
 		<div class="activities">
 			<h1>Activities:</h1>
 
-			<c:forEach items="${ activities }" var="activity">
-				<p>${ activity.text }</p>
+			<c:forEach items="${ activities }" var="activity">					
+				<c:if test="${ activity.color == 'green' }">
+					<p class="green">${ activity.text }</p>
+				</c:if>
+
+				<c:if test="${ activity.color == 'red' }">
+					<p class="red">${ activity.text }</p>
+				</c:if>
+
 			</c:forEach>
 		</div>
 	</body>
