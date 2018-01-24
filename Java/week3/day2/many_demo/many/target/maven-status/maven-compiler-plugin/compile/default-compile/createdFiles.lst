@@ -1,0 +1,12 @@
+com/project/many/controllers/CategoryController.class
+com/project/many/controllers/ProductController.class
+com/project/many/repositories/ProductRepository.class
+com/project/many/services/CatProService.class
+com/project/many/services/CategoryService.class
+com/project/many/repositories/CatProRepository.class
+com/project/many/services/ProductService.class
+com/project/many/models/Product.class
+com/project/many/models/Category.class
+com/project/many/manyApplication.class
+com/project/many/repositories/CategoryRepository.class
+com/project/many/models/CategoryProduct.class

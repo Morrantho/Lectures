@@ -1,9 +1,0 @@
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/repositories/RoleRepository.java
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/repositories/UserRepository.java
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/controllers/UserController.java
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/config/WebSecurityConfig.java
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/login_regApplication.java
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/services/UserService.java
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/models/User.java
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/services/RoleService.java
-/home/tony/Documents/Lectures/Java/week3/day1/login_reg/src/main/java/com/project/login_reg/models/Role.java

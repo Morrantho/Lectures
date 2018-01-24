@@ -1,0 +1,6 @@
+com/project/login_test/controllers/UserController.class
+com/project/login_test/login_testApplication.class
+com/project/login_test/controllers/RouteController.class
+com/project/login_test/models/User.class
+com/project/login_test/services/UserService.class
+com/project/login_test/repositories/UserRepository.class

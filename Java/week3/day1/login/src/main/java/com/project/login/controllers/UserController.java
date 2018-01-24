@@ -14,12 +14,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.login.models.User;
 import com.project.login.services.UserService;
+
 
 @Controller
 public class UserController{
@@ -29,13 +31,17 @@ public class UserController{
 		this.us=us;
 	}
 	
+	@ResponseBody
 	@RequestMapping("/dashboard")
-	public String dashboard(HttpSession s){
-		if( s.getAttribute("id") != null ){
-			return "dashboard";
-		}else{
-			return "redirect:/";
-		}
+	public ArrayList<User> dashboard(HttpSession s,Model model){
+		return (ArrayList<User>)us.all();
+
+		// if( s.getAttribute("id") != null ){
+
+			// return "dashboard";
+		// }else{
+			// return "redirect:/";
+		// }
 	}
 
 	@PostMapping("/login")
