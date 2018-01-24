@@ -7,6 +7,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.project.many.repositories.ProductRepository;
+import com.project.many.models.Product;
+
+import java.util.ArrayList;
 
 @Service
 public class ProductService {

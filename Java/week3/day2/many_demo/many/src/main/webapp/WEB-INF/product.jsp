@@ -15,6 +15,23 @@
 	</head>
 
 	<body>
-		<h1>Its your turn to work.</h1>
+		<form:form action="/products/new" method="post" modelAttribute="hello">
+			<form:label path="name">Name:
+				<form:errors path="name"></form:errors>
+				<form:input path="name"></form:input>
+			</form:label>
+
+			<form:label path="description">Description:
+				<form:errors path="description"></form:errors>
+				<form:input path="description"></form:input>
+			</form:label>
+
+			<form:label path="price">Price:
+				<form:errors path="price"></form:errors>
+				<form:input type="number" path="price"></form:input>
+			</form:label>
+
+			<input type="submit" />
+		</form:form>
 	</body>
 </html>

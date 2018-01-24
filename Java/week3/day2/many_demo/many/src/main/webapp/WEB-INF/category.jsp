@@ -15,6 +15,16 @@
 	</head>
 
 	<body>
-		<h1>Its your turn to work.</h1>
+
+		<form:form action="/categories/new" method="post" modelAttribute="goodbye">
+			<form:label path="name">Name:
+				<form:errors path="name"></form:errors>
+				<form:input path="name"></form:input>
+			</form:label>
+			
+			<input type="submit" />
+		</form:form>
+
+
 	</body>
 </html>

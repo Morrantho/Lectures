@@ -31,6 +31,11 @@ public class CategoryProduct{
 	public CategoryProduct(){
 	}
 
+    public CategoryProduct(Product p,Category c){
+        product = p;
+        category = c;
+    }
+
 	@Id
 	@GeneratedValue
 	private long id;

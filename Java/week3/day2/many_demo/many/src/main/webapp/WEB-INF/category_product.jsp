@@ -15,6 +15,22 @@
 	</head>
 
 	<body>
-		<h1>Its your turn to work.</h1>
+
+		<form action="/categories/add" method="post">
+			<select name="category_id">			
+				<c:forEach items="${categories}" var="cat">
+					<option value="${cat.id}">${cat.name}</option>
+				</c:forEach>
+			</select>
+			
+			<select name="product_id">
+				<c:forEach items="${products}" var="pro">
+					<option value="${pro.id}">${pro.name}</option>
+				</c:forEach>				
+			</select>
+
+			<input type="submit" />
+		</form>
+
 	</body>
 </html>
