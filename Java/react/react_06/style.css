@@ -1,0 +1,28 @@
+*{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+button{
+	height: 32px;
+}
+
+.root{
+	background-color: grey;
+}
+
+.header{
+	background-color: rgb(24,24,24);
+	height: 25vh;
+}
+
+.body{
+	background-color: rgb(64,64,64);
+	height: 50vh;
+}
+
+.footer{
+	background-color: rgb(32,32,32);
+	height: 25vh;
+}

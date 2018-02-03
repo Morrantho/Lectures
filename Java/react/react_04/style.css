@@ -1,0 +1,24 @@
+*{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.root{
+	background-color: grey;
+}
+
+.header{
+	background-color: red;
+	height: 25vh;
+}
+
+.body{
+	background-color: green;
+	height: 50vh;
+}
+
+.footer{
+	background-color: blue;
+	height: 25vh;
+}

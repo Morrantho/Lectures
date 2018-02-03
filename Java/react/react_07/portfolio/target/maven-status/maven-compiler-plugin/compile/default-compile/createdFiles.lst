@@ -1,0 +1,5 @@
+com\project\portfolio\portfolioApplication.class
+com\project\portfolio\controllers\UserController.class
+com\project\portfolio\controllers\Router.class
+com\project\portfolio\models\User.class
+com\project\portfolio\repositories\UserRepository.class
