@@ -15,7 +15,7 @@
 
 ### MEAN Request + Response Cycle
 
-<img src="reqres.png" alt="MEAN's Request and Response cycle" width="200px">
+<img src="reqres.png" alt="MEAN's Request and Response cycle" width="1024px">
 
 * <details>
 	<summary>What does MEAN stand for?</summary>
