@@ -71,11 +71,13 @@
 
 ### ES6:
 
-* What is ES6?
+* <details>
+	<summary>What is ES6?</summary>
 
-* Important to know ES5 as well.
+	ES6 stands for EcmaScript 6. It was built to standardize JavaScript and allow for different implementations and versions of JavaScript. You can think of it as a pre-cursor that JavaScript it built on top of. Version 6, which is the latest implemented a plethora of new features that we're made available to us. Some of them are listed below.
 
-* Its a wrapper for ES5 functionality.
+	Its also a wrapper for ES5 functionality. In other words, the new features in ES6 are written in ES5, so knowing how ES5 works first is important.
+</details>
 
 ### ES6 Benefits:
 
@@ -90,6 +92,28 @@
 * Many more.
 
 ### Code:
+
+* <details>
+	<summary>How can we run it in our browser?</summary>
+
+	The quickest way is to make an <code>.html</code> file, and create a <code><script></script></code> tag, with our code in between.
+
+	Ex:
+
+	<code>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<title></title>
+		</head>
+		<body>
+			<script type="text/javascript">
+				console.log("Hello World!");
+			</script>
+		</body>
+		</html>
+	</code>
+</details>
 
 * <details>
 	<summary>What are three ways we can define variables in JavaScript?</summary>
@@ -112,7 +136,6 @@
 		const myVariable = 1337;
 	</code>
 </details>
-
 
 * <details>
 	<summary>What is the difference between these 3 definitions?</summary>
@@ -156,7 +179,87 @@
 	</code>
 </details>
 
-* Remove Negatives:
+* <details>
+	<summary>How do we define strings?</summary>
 
-* What can we store in JavaScipt objects?
+	Create a variable and surround its value with double or single quotes.
 
+	<code>
+		var myString = "Hello!";
+		var myOtherString = 'Goodbye!'
+	</code>
+</details>
+
+* <details>
+	<summary>How do we instantiate loops?</summary>
+
+	Use the word for, followed by a variable to initialize a counter, the conditional it should break at, and a number to increment by:
+
+	<code>
+		for(let i=0; i < 10; i++){
+			console.log(i);
+		}
+	</code>
+</details>
+
+* <details>
+	<summary>How do we write conditionals?</summary>
+
+	Use the word if, followed by two values we are comparing:
+
+	<code>
+		if( 5 > 10 ){
+			console.log("Well thats not right.");
+		}else if( 13 < 7 ){
+			console.log("Well, neither is that.");
+		}else{
+			console.log("Phew, glad we made it here...");
+		}
+	</code>
+</details>
+
+* <details>
+	<summary>How about arrays?</summary>
+
+	Define a variable, and enclose some data with a pair of square brackets. Values are separated by commas:
+
+	<code>
+		let myArr = [5,10,15];
+
+		console.log( myArr[1] );
+	</code>
+</details>
+
+* <details>
+	<summary>How do we create objects?</summary>
+
+	Define a variable and enclose some data with a pair of curly braces. Values are key, value pair based. They are separated by a colon and multiple values are separated by commas:
+
+	<code>
+		let myObject = {
+			"name":"Bob",
+			"age":32,
+			"job":"Accountant"
+		};
+	</code>
+</details>
+
+* <details>
+	<summary>How can we traverse objects? Can we use a normal for loop?</summary>
+
+	No. Objects have keys and values, not numberical indices, so we must somehow state each key in order to retrieve each value.
+
+	The "in" keyword retrieves the keys of the object that we are trying to traverse. This lets us iterate it's values:
+
+	<code>
+		let myObject = {
+			"name":"Bob",
+			"age":32,
+			"job":"Accountant"
+		};
+		
+		for( let someValue in myObject ){
+			console.log( someValue );
+		}
+	</code>
+</details>
