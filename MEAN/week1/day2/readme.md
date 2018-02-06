@@ -23,6 +23,7 @@
 	Using the new keyword:
 
 	<code>
+
 		function Rectangle(x,y,w,h){
 			this.x = x;
 			this.y = y;
@@ -38,6 +39,7 @@
 	Without using the new keyword:
 
 	<code>
+
 		function Rectangle(x,y,w,h){
 			let obj = {};
 			obj.x = x;
@@ -65,6 +67,7 @@
 	Non-Prototype Example:
 
 	<code>
+
 		function Rectangle(x,y,w,h){
 			this.x=x;
 			this.y=y;
@@ -83,6 +86,7 @@
 	Prototype Example:
 
 	<code>
+
 		function Rectangle(x,y,w,h){
 			this.x=x;
 			this.y=y;
@@ -116,6 +120,7 @@
 		Problem:
 
 		<code>
+
 			function Rectangle(x,y,w,h){
 				this.x=x;
 				this.y=y;
@@ -141,6 +146,7 @@
 		Solution:
 
 		<code>
+
 			function Rectangle(x,y,w,h){
 				// Store a reference to this, so we can refer to it within our private method.
 				let self = this;
@@ -174,6 +180,7 @@
 	By using the class keyword, we can create classes. By using the "constructor" keyword, we are emulating function constructors.
 
 	<code>
+
 		class Student{
 			constructor(name,email,dojo,stacks){
 				this.name   = name;
@@ -191,6 +198,7 @@
 	This "Student" class is identical to:
 
 	<code>
+
 		function Student(name,email,dojo,stacks){
 			let self = this;
 
@@ -214,6 +222,7 @@
 	We can use the extends keyword, followed by the class we want to extend:
 
 	<code>
+
 		class Animal{
 			constructor(name,species,legs){
 				this.name=name;
@@ -247,6 +256,7 @@
 	A good naming convention to prevent users from accessing things things they aren't supposed to is to prefix member's with an underscore. This still doesn't hide your data if someone prints an instance of your object though:
 
 	<code>
+
 		class Student{
 			constructor(name,email){
 				this._name=name;
@@ -276,6 +286,7 @@
 	Great question, heres an answer for true data privacy using ES5:
 
 	<code>
+
 		function Student(name,email){
 			let name = name;
 			let email = email;
