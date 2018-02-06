@@ -244,7 +244,7 @@
 
 ### Setters and Getters:
 
-<details>
+* <details>
 	<summary>How do we keep our data private within a class, yet still have access to it via methods?</summary>
 
 	Enter setters and getters!
