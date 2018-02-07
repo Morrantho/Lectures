@@ -9,11 +9,6 @@
 * Callbacks
 * Async
 
-### Discussion:
-
-* Breakdown a callback syntactically, when is each part firing and how. Write it on the board.
-* Callbacks are driven by events, events drive the internet. Callbacks enable JavaScript to do Async goodness.
-
 ### Anonymous / Arrow / Immediate Functions:
 
 * <details>
@@ -63,6 +58,7 @@
 	```javascript
 		function getGroceries(){
 			let groceries = ["milk", "bread", "eggs"];
+
 			console.log(groceries);
 
 			callFriend("will", (data)=>{
