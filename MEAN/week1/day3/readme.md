@@ -104,12 +104,15 @@
 
 ### Events:
 
-Think back to jQuery:
+* <details>
+	<summary>How do implement events in JavaScript?</summary>
 
-```javascript
-	$("someElement").click(function(){
-		// This code gets executed when your element is clicked, but its not run just because we defined it here. Other things can run, while we wait for this event to trigger.
 
-		console.log("You clicked me!");
-	})
-```
+	```javascript
+		$("someElement").click(function(){
+			// This code gets executed when your element is clicked, but its not run just because we defined it here. Other things can run, while we wait for this event to trigger.
+
+			console.log("You clicked me!");
+		})
+	```
+</details>
