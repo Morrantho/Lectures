@@ -21,9 +21,15 @@
 
 ### Discussion Questions:
 <details><summary>How do I create a new DB?</summary>
+
+	> use DATABASE_NAME
+
+MongoDB "use DATABASE_NAME" is used to create a database. The command will create a new database if it doesn't exist, otherwise it will return the existing database.
 </details>
 
-<details><summary>What's the Mongo parallel to a SQL row?</summary>
+<details><summary>What's the Mongo parallel to a SQL row/record?</summary>
+
+	Document (JSON object)
 </details>
 
 <details><summary>If I had an x collection, how could I query just y? (Addresses, addresses in california)</summary>
