@@ -2,7 +2,7 @@
 
 ## MongooseJS
 
-<img src="https://coursework.vschool.io/content/images/2015/11/mongoosejs.png" style="width: 500px;" alt="">
+<img src="https://coursework.vschool.io/content/images/2015/11/mongoosejs.png" width="400" alt="">
 
 ### Learning Objectives:
 * Connecting a DB to Node
