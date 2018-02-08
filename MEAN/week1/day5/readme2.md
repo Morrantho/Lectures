@@ -10,7 +10,7 @@
 * Associations + Validations
 
 ### Discussion:
-* Mongoose is a database connector that will let us talk to our MongoDB through Node. It also comes equiped with quite a bit of tooling.
+* Mongoose is a database connector that will let us talk to our MongoDB through Node. It also comes equipped with quite a bit of tooling.
 * MongoDB is like the wild west, Mongoose brings in some much needed structure and rules.
 * Mongoose is an ORM, supports automatic validation for inserts and updates.
 * Mongoose supports all manor of middleware for Database actions, including but not limited to Bcrypt
