@@ -36,33 +36,35 @@ This command will create a new database if it doesn't exist, otherwise it will r
 </details>
 
 
-### Basic CRUD:
-#### CREATE - Inserting a document into a collection
+
+<details><summary>How do we do basic CRUD?</summary>
+
+##### CREATE - Inserting a document into a collection
 
 	db.COLLECTION_NAME.insert({YOUR_JSON_DOCUMENT})
 
 **Example:** db.users.insert({name: "Rob", email: "rob@gmail.com"})
 
-	
-#### READ - Retrieving documents from a collection
+
+##### READ - Retrieving documents from a collection
 	db.COLLECTION_NAME.find({YOUR_QUERY_DOCUMENT})
 
 **Example:** db.users.find({name: "Rob"})
 
 	
-#### DESTROY - Removing documents from a collection
+##### DESTROY - Removing documents from a collection
 	db.COLLECTION_NAME.remove({YOUR_QUERY_DOCUMENT}, BOOLEAN)
 
 **Example:** db.users.remove({email: "rob@gmail.com"})
 
-#### UPDATE - Updating documents in a collection
+##### UPDATE - Updating documents in a collection
 	db.COLLECTION_NAME.update({QUERY}, {FIELDS_TO_UPDATE}, {OPTIONS})  
 	// Note: the {OPTIONS} document is optional
 
 This will completely overwrite everything except the _id field.
  
 **Challenge:** How would we update a document and retain the existing information?
-
+</details>
 
 
 
