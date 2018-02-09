@@ -22,7 +22,7 @@
 
 	> use DATABASE_NAME
 
-MongoDB "use DATABASE_NAME" is used to create a database. The command will create a new database if it doesn't exist, otherwise it will return the existing database.
+This command will create a new database if it doesn't exist, otherwise it will return the existing database.
 </details>
 
 <details><summary>What's the Mongo parallel to a SQL row/record?</summary>
@@ -30,5 +30,41 @@ MongoDB "use DATABASE_NAME" is used to create a database. The command will creat
 	Document (JSON object)
 </details>
 
-<details><summary>If I had an x collection, how could I query just y? (Addresses, addresses in california)</summary>
+<details><summary>How would I get all the addresses in California out of a collection of addresses?</summary>
+
+	db.addresses.find({state: "California"})
 </details>
+
+
+
+<details><summary>How do we do basic CRUD?</summary>
+
+#### CREATE - Inserting a document into a collection
+
+	db.COLLECTION_NAME.insert({YOUR_JSON_DOCUMENT})
+
+**Example:** db.users.insert({name: "Rob", email: "rob@gmail.com"})
+
+
+#### READ - Retrieving documents from a collection
+	db.COLLECTION_NAME.find({YOUR_QUERY_DOCUMENT})
+
+**Example:** db.users.find({name: "Rob"})
+
+	
+#### DESTROY - Removing documents from a collection
+	db.COLLECTION_NAME.remove({YOUR_QUERY_DOCUMENT}, BOOLEAN)
+
+**Example:** db.users.remove({email: "rob@gmail.com"})
+
+#### UPDATE - Updating documents in a collection
+	db.COLLECTION_NAME.update({QUERY}, {FIELDS_TO_UPDATE}, {OPTIONS})  
+	// Note: the {OPTIONS} document is optional
+
+This will completely overwrite everything except the _id field.
+ 
+**Challenge:** How would we update a document and retain the existing information?
+</details>
+
+
+
