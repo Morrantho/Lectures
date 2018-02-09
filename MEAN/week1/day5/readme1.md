@@ -33,6 +33,8 @@ This command will create a new database if it doesn't exist, otherwise it will r
 </details>
 
 <details><summary>How would I get all the addresses in California out of a collection of addresses?</summary>
+
+	db.addresses.find({state: "California"})
 </details>
 
 
