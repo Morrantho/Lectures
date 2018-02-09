@@ -1,6 +1,6 @@
 # Week 2 - Day 1 - Afternoon
 
-## MongooseJS
+## Mongoose
 
 <img src="https://coursework.vschool.io/content/images/2015/11/mongoosejs.png" width="400" alt="">
 
