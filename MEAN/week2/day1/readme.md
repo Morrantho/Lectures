@@ -21,6 +21,7 @@
 </details>
 
 <details>
+
 ​	<summary>What do models look like in MEAN?</summary>
 
 ​	Our models are our "collections" in MongoDB. They are created for us in MongoDB automatically via mongoose when we define them using: new mongoose.Schema() and naming our collection using: mongoose.model()
@@ -45,7 +46,8 @@
 </details>
 
 <details>
-<summary>What do Controllers look like in MEAN?</summary>
+
+​	<summary>What do Controllers look like in MEAN?</summary>
 
 ​	Our Controllers are the logic of our application that state what should happen when our client's visit routes. Our controllers will manipulate one of our "models" via CRUD methods. In this case, our recently created "User" model.
 
@@ -136,6 +138,7 @@
 ​	The most important difference is that we won't be retrieving data from our database and then 	rendering it to a page to be sent out to clients. We will simply be returning JSON data from the routes we define instead. This means that any routes we navigate to will be JSON data that any front-end framework or API can use to display on their own web page.
 
 ​	This will tremendously reduce the load our server will take, since it doesn't have to render any data, but rather give it back to client's so that they can display it however they choose. In doing this, we've essentially turned our server into an A.P.I
+
 </details>
 
 <details>
