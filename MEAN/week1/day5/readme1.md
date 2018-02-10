@@ -4,6 +4,8 @@
 
 <img src="https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png" width="500" alt="">
 
+
+
 ### Learning Objectives:
 * MongoDB basics
 * Mongo shell
@@ -25,17 +27,20 @@
 This command will create a new database if it doesn't exist, otherwise it will return the existing database.
 </details>
 
-<details><summary>What's the Mongo parallel to a SQL row/record?</summary>
+<details><summary>What's the Mongo parallel to a SQL Schema?</summary>
+
+	Database (db)
+</details>
+
+<details><summary>What's the Mongo parallel to a SQL Table?</summary>
+
+	Collection
+</details>
+
+<details><summary>What's the Mongo parallel to a SQL Row / Record?</summary>
 
 	Document (JSON object)
 </details>
-
-<details><summary>How would I get all the addresses in California out of a collection of addresses?</summary>
-
-	db.addresses.find({state: "California"})
-</details>
-
-
 
 <details><summary>How do we do basic CRUD?</summary>
 
