@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	
+	<body>
+		<h1>Users:</h1>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Name:</th>
+					<th>Email:</th>
+					<th>Password:</th>
+				</tr>
+			</thead>
+
+			<tbody>				
+				<% if(typeof(users) != "undefined"){%>
+					<% for(user of users){ %>
+						<tr>
+							<td><%=user.name%></td>
+							<td><%=user.email%></td>
+							<td><%=user.password%></td>
+						</tr>
+					<% } %>
+				<%}%>
+			</tbody>
+		</table>
+
+		<% if(typeof(errors) != "undefined"){ %>
+			<% for(err in errors){ %>
+				<p><%= errors[err].message %></p>
+			<% } %>			
+		<% }%>
+
+		<form action="/users/new" method="post">
+			<p>Name:<input type="text" name="name"></p>
+			<p>Email:<input type="text" name="email"></p>
+			<p>Password:<input type="text" name="password"></p>
+			<p><input type="submit" value="Register"></p>
+		</form>
+	</body>
+</html>
