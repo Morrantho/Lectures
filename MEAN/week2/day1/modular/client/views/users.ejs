@@ -9,9 +9,10 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Name:</th>
+					<th>Name / Edit:</th>
 					<th>Email:</th>
 					<th>Password:</th>
+					<th>Destroy:</th>
 				</tr>
 			</thead>
 
@@ -19,9 +20,12 @@
 				<% if(typeof(users) != "undefined"){%>
 					<% for(user of users){ %>
 						<tr>
-							<td><%=user.name%></td>
+							<td><a href="/users/<%=user._id%>"><%=user.name%></a></td>
 							<td><%=user.email%></td>
 							<td><%=user.password%></td>
+							<td>
+								<form action="/users/<%=user._id%>/destroy" method="post"><input type="submit" value="Destroy"></form>
+							</td>
 						</tr>
 					<% } %>
 				<%}%>

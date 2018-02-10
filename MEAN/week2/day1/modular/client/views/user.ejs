@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	
+	<body>
+		<h1>Name: <%=user.name%></h1>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Id:</th>
+					<th>Email:</th>
+					<th>Password:</th>
+				</tr>
+			</thead>
+
+			<tbody>				
+				<tr>
+					<td><%=user._id%></td>
+					<td><%=user.email%></td>
+					<td><%=user.password%></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<form action="/users/:id/update" method="post">
+			<p>Name:<input type="text" name="name" value="<%=user.name%>"></p>
+			<p>Email:<input type="text" name="email" value="<%=user.email%>"></p>
+			<p>Password:<input type="text" name="password" value="<%=user.password%>"></p>
+			<p><input type="submit" value="Update"></p>
+			<input type="hidden" name="_id" value="<%=user._id%>">
+		</form>
+	</body>
+</html>
