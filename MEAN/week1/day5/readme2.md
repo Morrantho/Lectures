@@ -1,4 +1,4 @@
-# Week 2 - Day 1 - Afternoon
+# Week 1 - Day 5 - Afternoon
 
 ## Mongoose
 
@@ -14,19 +14,19 @@
 
 ### Discussion Questions:
 
-* <details>
+<details>
 	<summary>Can we use Mongo without Mongoose? How?<summary>
 
 	Yes. There are other Node modules that allow us to connect to a mongodb server other than Mongoose. In Python, py-mongo is a plugin that lets us do this same thing. Feel free to explore different plugins that will let you do this.
 </details>
 
-* <details>
+<details>
 	<summary>Can we do joins with Mongoose?</summary>
 
 	Sort've. MongoDB is non-relational, but we can still store references to Object Id's, which means we can compare against other Object Id's in another collection.
 </details>
 
-* <details>
+<details>
 	<summary>How can we install Mongoose and connect it to a mongoDB database?</summary>
 
 	First, we need to run <code>npm install mongoose --save</code> in our terminal. Then we need to require it and run <code>mongoose.connect()</code>. The last forward slash followed by a word is the database we are telling mongoDB to use.
@@ -37,7 +37,7 @@
 	```
 </details>
 
-* <details>
+<details>
 	<summary>What is a Mongoose Schema and how do we create one using Mongoose?</summary>
 
 	A schema in Mongoose is simply a collection in MongoDB. Once we create one, we will have full access / control of MongoDB CRUD methods via our Node server. Mongoose will create this collection in the database we chose using: <code>mongoose.connect();</code>
@@ -62,10 +62,9 @@
 	```
 </details>
 
-* <details>
-	<summary>Where would these Database Calls be placed in our Node app? What would that look like?<summary>
+<details><summary>Where would these Database Calls be placed in our Node app? What would that look like?<summary>
 
-	These database calls would happen in our controllers, based on the CRUD action we intend to take:
+These database calls would happen in our controllers, based on the CRUD action we intend to take:
 
 	```javascript
 
@@ -86,13 +85,13 @@
 	```
 </details>
 
-* <details>
+<details>
 	<summary>How many callbacks do you see in a single HTTP POST route for a Creation operation?</summary>
 
 	There are usually two. The first one to indicate what we want to do upon a client visiting our route. The second is what we want to do when we've successfully or unsuccessfully saved / inserted the new document.
 </details>
 
-* <details>
+<details>
 	<summary>How can we validate models now that we can insert data?</summary>
 
 	With minor changes to our schema, we can add validations to indicate that fields are required, must meet a minimum and maximum length and more:
@@ -110,7 +109,7 @@
 	```
 </details>
 
-* <details>
+<details>
 	<summary>How do we show these errors to user's?</summary>
 
 	Inside of our <code>.save()</code> callback, we now have access to an <code>.errors</code> property. We'll be using it to render the errors onto the context of our <code>.ejs</code> files:
@@ -143,7 +142,7 @@
 	```
 </details>
 
-* <details>
+<details>
 	<summary>How about relationships? How can I integrate a One-To-Many?</summary>
 
 	On your schema that contains "Many", make it an Array that holds references to Object Id's. You can then use the "ref" property to refer to another Model.
