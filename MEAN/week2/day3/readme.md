@@ -2,7 +2,7 @@
 
      
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/2000px-AngularJS_logo.svg.png" alt="AngularJS logo" width="800px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/2000px-AngularJS_logo.svg.png" alt="AngularJS logo" width="600px">
 
 
 ## Angular
