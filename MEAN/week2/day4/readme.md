@@ -32,5 +32,5 @@
 </details>
 <details><summary>We are currently using one App Module, but can we use multiple modules, and if so, why would we consider doing so?</summary>
 	
-	Separating the application, similar to namespaces, usually different modules are not relevant to each other in data/usage.
+Separating the application, similar to namespaces, usually different modules are not relevant to each other in data/usage.
 </details>
