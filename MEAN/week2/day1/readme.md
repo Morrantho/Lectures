@@ -2,7 +2,7 @@
 
 ## Modularization
 
-<img src="https://coursework.vschool.io/content/images/2015/11/mongoosejs.png" alt="Mongoose JS Logo" width="200px">
+<img src="https://coursework.vschool.io/content/images/2015/11/mongoosejs.png" alt="Mongoose JS Logo" width="400px">
 
 ### Overview:
 

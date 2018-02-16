@@ -1,5 +1,5 @@
 # Week 2 - Day 2
-<img src="https://coursework.vschool.io/content/images/2015/11/mongoosejs.png" alt="Mongoose JS Logo" width="500px">
+<img src="https://coursework.vschool.io/content/images/2015/11/mongoosejs.png" alt="Mongoose JS Logo" width="400px">
 
 # Advanced Mongoose
 * Finish all of Basic and Intermediate Mongoose first
