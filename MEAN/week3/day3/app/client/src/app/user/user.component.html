@@ -1,0 +1,13 @@
+<h1>Register:</h1>
+
+<div *ngIf="user.errors">
+	<h1 *ngFor="let err of user.errors">{{ err.message }}</h1>
+</div>
+
+<form (submit)="register()">
+
+	<p>Email:<input type="text" name="user.email" [(ngModel)]="user.email"></p>
+	<p>Password:<input type="text" name="user.password" [(ngModel)]="user.password"></p>
+
+	<input type="submit" value="Register">
+</form>

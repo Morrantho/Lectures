@@ -1,0 +1,15 @@
+{{ post | json }}
+
+<h1>Post Creator:  {{ post._user.email }}</h1>
+<h1>Post Content:  {{ post.content }}</h1>
+
+<div *ngFor="let comment of post._comments">
+	<h2>Comment Creator: {{ comment._user.email }}</h2>
+	<h2>Comment Content: {{ comment.content }}</h2>
+</div>
+
+<form (submit)="create()">
+	<p>Content:<input type="text" name="comment.content" [(ngModel)]="comment.content"></p>
+
+	<input type="submit" value="Comment">
+</form>

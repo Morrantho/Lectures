@@ -1,0 +1,47 @@
+Dash Component
+
+<h1>New Category:</h1>
+
+<form (submit)="newCategory()">
+	<input type="text" name="category.title" [(ngModel)]="category.title">
+
+	<input type="submit" value="Create Category">
+</form>
+
+<h1>New Product:</h1>
+
+<form (submit)="newProduct()">
+	<input type="text" name="product.title" [(ngModel)]="product.title">
+
+	<input type="submit" value="Create Product">
+</form>
+
+<h1>Join:</h1>
+
+{{ procat | json }}
+
+<form (submit)="newProCat()">
+	<select name="procat.category" [(ngModel)]="procat.category">
+		<option *ngFor="let cat of categories" value="{{cat._id}}">{{cat.title}}</option>
+	</select>
+
+	<select name="procat.product" [(ngModel)]="procat.product">
+		<option *ngFor="let pro of products" value="{{pro._id}}">{{pro.title}}</option>
+	</select>
+
+	<input type="submit" value="Join">
+</form>
+
+<h1>Store:</h1>
+
+<table border="1">
+	<tr>
+		<td>Category</td>
+		<td>Product</td>
+	</tr>
+
+	<tr *ngFor="let procat of procats">
+		<td>{{ procat.category.title }}</td>
+		<td>{{ procat.product.title }}</td>
+	</tr>
+</table>

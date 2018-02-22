@@ -1,0 +1,19 @@
+Post Component
+
+<div *ngIf="errs">
+	<h1 *ngFor="let err of errs">{{ err.message }}</h1>
+</div>
+
+<form (submit)="create()">
+	{{ post | json }}
+
+	<p>Content:<input type="text" name="post.content" [(ngModel)]="post.content" ></p>
+
+	<input type="submit" value="Post">
+</form>
+
+<div *ngIf="posts">
+	<CommentComponent *ngFor="let post of posts" [post]="post" >
+
+	</CommentComponent>
+</div>
