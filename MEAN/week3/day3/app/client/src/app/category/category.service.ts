@@ -8,8 +8,8 @@ export class CategoryService {
 
 	}
 
-	create(cat,cb){
-		this.http.post("/categories/new",cat)
+	create(category,cb){
+		this.http.post("/categories/new",category)
 		.subscribe(data=>cb(data));
 	}
 

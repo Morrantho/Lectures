@@ -23,8 +23,6 @@ class ProductCategoryController{
 	create(req,res){
 		let procat = new ProductCategory(req.body);
 
-		console.log(procat);
-
 		procat.save((err)=>{
 			if(err){
 				return res.json({errors:procat.errors});

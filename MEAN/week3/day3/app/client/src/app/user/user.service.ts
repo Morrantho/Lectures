@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router,ActivatedRoute,Params} from "@angular/router";
 
 @Injectable()
 export class UserService {
@@ -9,18 +8,25 @@ export class UserService {
 
 	}
 
-	session(cb){
-		this._http.get("/session")
-		.subscribe((data)=>cb(data));
+	create(user,cb){
+		this._http.post("/users/new",user)
+		.subscribe(data=>cb(data));
 	}
 
-	register(user,cb){
-		this._http.post("/users/new",user)
-		.subscribe((data)=>cb(data));
+	login(user,cb){
+		console.log(user);
+
+		this._http.post("/login",user)
+		.subscribe(data=>cb(data));
 	}
 
 	logout(){
 		this._http.get("/logout")
-		.subscribe()
+		.subscribe();
+	}
+
+	session(cb){
+		this._http.get("/session")
+		.subscribe(data=>cb(data));
 	}
 }

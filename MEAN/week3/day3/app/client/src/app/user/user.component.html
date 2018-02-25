@@ -1,13 +1,23 @@
 <h1>Register:</h1>
 
-<div *ngIf="user.errors">
-	<h1 *ngFor="let err of user.errors">{{ err.message }}</h1>
-</div>
+{{ user | json }}
 
 <form (submit)="register()">
-
 	<p>Email:<input type="text" name="user.email" [(ngModel)]="user.email"></p>
-	<p>Password:<input type="text" name="user.password" [(ngModel)]="user.password"></p>
+	<p>Password:<input type="password" name="user.password" [(ngModel)]="user.password"></p>
 
 	<input type="submit" value="Register">
 </form>
+
+{{ loggedIn | json }}
+
+
+<h1>Login:</h1>
+
+<form (submit)="login()">
+	<p>Email:<input type="text" name="loggedIn.email" [(ngModel)]="loggedIn.email"></p>
+	<p>Password:<input type="password" name="loggedIn.password" [(ngModel)]="loggedIn.password"></p>
+
+	<input type="submit" value="Login">
+</form>
+

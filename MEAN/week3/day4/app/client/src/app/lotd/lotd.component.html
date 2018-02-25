@@ -1,0 +1,11 @@
+<div *ngIf="lotd" >
+	<h1>Listing of the Day!</h1>
+
+	<div class="flex">
+		<img src="{{ lotd.src }}" width="200" height="200">
+		<h1>{{lotd.title}}</h1>
+		<p>{{lotd.description}}</p>
+		<h1>${{lotd.price}}</h1>
+		<p>{{lotd.location}}</p>
+	</div>
+</div>

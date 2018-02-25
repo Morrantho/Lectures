@@ -8,8 +8,8 @@ export class ProductService {
 
 	}
 
-	create(cat,cb){
-		this.http.post("/products/new",cat)
+	create(product,cb){
+		this.http.post("/products/new",product)
 		.subscribe(data=>cb(data));
 	}
 

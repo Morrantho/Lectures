@@ -1,0 +1,13 @@
+<div class="create">
+	<h1>Create Listing:</h1>
+
+	<form (submit)="create()">
+		<p>Title:<input type="text" name="listing.title" [(ngModel)]="listing.title"></p>
+		<p>Description:<input type="text" name="listing.description" [(ngModel)]="listing.description"></p>
+		<p>Price:<input type="text" name="listing.price" [(ngModel)]="listing.price"></p>
+		<p>Location:<input type="text" name="listing.location" [(ngModel)]="listing.location"></p>
+		<p>Source:<input type="text" name="listing.src" [(ngModel)]="listing.src"></p>
+
+		<input type="submit" value="Create">
+	</form>
+</div>

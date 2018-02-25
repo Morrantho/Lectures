@@ -1,0 +1,20 @@
+<div class="flex">
+	<img src="{{listing.src}}" width="200" height="200">
+
+	<h1>{{listing.title}}</h1>
+
+	<p>{{listing.description}}</p>
+
+	<h1>${{listing.price}}</h1>
+
+	<p>{{listing.location}}</p>
+
+	<form *ngIf="listing.user._id == user" (submit)="destroy()">
+		<input type="submit" value="DELETE">
+	</form>
+
+	<form *ngIf="listing.user._id != user" (submit)="contact(listing.user)">
+		<input type="submit" value="CONTACT">
+	</form>
+
+</div>

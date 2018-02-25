@@ -1,0 +1,9 @@
+<NavComponent></NavComponent>
+
+<div class="content">
+	<p>Search:<input type="text" name="text" [(ngModel)]="text"></p>
+
+	<div class="listings">
+		<ListingComponent *ngFor="let listing of listings | search: text" [listing]="listing" [user]="user"></ListingComponent>
+	</div>
+</div>

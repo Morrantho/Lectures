@@ -1,0 +1,17 @@
+<form (submit)="update()">
+	<img src="{{listing.src}}" width="200" height="200">
+
+	<p>Title:<input type="text" name="listing.title" [(ngModel)]="listing.title"></p>
+
+	<p>Description:<input type="text" name="listing.description" [(ngModel)]="listing.description"></p>
+
+	<p>Price:<input type="number" name="listing.price" [(ngModel)]="listing.price"></p>
+
+	<p>Location:<input type="text" name="listing.location" [(ngModel)]="listing.location"></p>
+
+	<input type="submit" value="Update">
+</form>
+
+<form (submit)="destroy()">
+	<input type="submit" value="Delete">
+</form>

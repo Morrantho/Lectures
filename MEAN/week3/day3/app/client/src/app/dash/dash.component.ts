@@ -1,96 +1,88 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../user/user.service";
-import {CategoryService} from "../category/category.service";
-import {ProductService} from "../product/product.service";
-import {ProductcategoryService} from "../productcategory/productcategory.service";
 import {Router} from "@angular/router";
+import {ProductService} from "../product/product.service";
+import {CategoryService} from "../category/category.service";
+import {ProcatService} from "../procat/procat.service";
 
 @Component({
-	selector: 'DashComponent',
+	selector: 'app-dash',
 	templateUrl: './dash.component.html',
 	styleUrls: ['./dash.component.css']
 })
 
 export class DashComponent implements OnInit {
-	private user:any;
 	private category:any;
 	private product:any;
+	private procat:any;
 
 	private products:any;
 	private categories:any;
-
 	private procats:any;
-	private procat:any;
 
-	constructor(private _us:UserService,private _router:Router,private _cs:CategoryService,private _ps:ProductService,private _pcs:ProductcategoryService){}
+	constructor(private us:UserService,private router:Router,private ps:ProductService,private cs:CategoryService,private pcs:ProcatService){
 
-	init(){
-		this.product = {title:""};
-		this.category = {title:""};
-		this.procat={
-			category:{},
-			product:{}
-		};
-
-		this.products=[];
-		this.categories=[];
-		this.procats=[];
 	}
 
 	ngOnInit(){
-		this.init();
-
-		this._us.session((data)=>{
-			if(data.errors)
-				this._router.navigate(["/register"]);
+		this.us.session((data)=>{
+			if(data.errors){
+				this.router.navigate(["/register"]);
+			}
 		});
 
-		this._cs.all((data)=>{
-			this.categories=data;
-		});
+		this.category = {title:""};
+		this.product = {title:""};
+		this.procat = {
+			category:"",
+			product:""
+		};
 
-		this._ps.all((data)=>{
-			this.products=data;
+		this.ps.all((data)=>{
+			this.products = data;
 		});
-
-		this._pcs.all(data=>{
-			this.procats=data;
+		this.cs.all((data)=>{
+			this.categories = data;
+		});
+		this.pcs.all(data=>{
+			this.procats = data;
 		});
 	}
 
-	newCategory(){
-		this._cs.create(this.category,(data)=>{
+	createProduct(){
+		this.ps.create(this.product,(data)=>{
 			if(data.errors){
-
+				console.log(data.errors);
 			}else{
-				this.categories.push(data);
+				// this.products.push(data);
+				this.product = {title:""};
 			}
-
-			this.init();
 		});
 	}
 
-	newProduct(){
-		this._ps.create(this.product,(data)=>{
+	createCategory(){
+		this.cs.create(this.category,(data)=>{
 			if(data.errors){
-
+				console.log(data.errors);
 			}else{
-				this.products.push(data);
+				// this.categories.push(data);
+				this.category = {title:""};
 			}
-
-			this.init();
 		});
 	}
 
-	newProCat(){
-		this._pcs.create(this.procat,(data)=>{
+	createProCat(){
+		this.pcs.create(this.procat,(data)=>{
 			if(data.errors){
-
+				console.log(data.errors);
 			}else{
-				this.procats.push(data);
-			}
+				// this.procats.push(data);
 
-			this.init();
+				this.procat = {
+					category:"",
+					product:""
+				};
+			}
 		});
 	}
 }
