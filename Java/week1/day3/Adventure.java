@@ -10,7 +10,13 @@ public class Adventure{
 
 		while(!text.equals("quit")){
 			text = input.nextLine();
-			System.out.println("Text: "+text);
+
+			if(text.equals("left")){
+				System.out.println("YOU WENT LEFT DOWN THE DARK SCARY ROAD.");
+			}else if(text.equals("right")){
+				System.out.println("YOU RAN INTO A TREE, GAME OVER!");
+				text = "quit";
+			}
 		}
 	}
 
