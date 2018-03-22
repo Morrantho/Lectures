@@ -15,7 +15,9 @@
 	</head>
 
 	<body>
-		<c:if test="${user != null}"><a href="/listings">Home</a></c:if>
+		<c:if test="${user.isHost()}"><a href="/listings/host">Home</a></c:if>
+		<c:if test="${!user.isHost()}"><a href="/listings">Home</a></c:if>
+
 		<c:if test="${user != null}"><a href="/users/new">Logout</a></c:if>
 
 		<h1>Find your Listing!</h1>
@@ -38,7 +40,7 @@
 					<td>${listing.address}</td>
 					<td>${listing.size}</td>
 					<td>${listing.cost}</td>
-					<td><a href="/listings/${listing.id}">See More</a></td>
+					<td><a href="/listings/${listing.id}">${listing.average}/5 - See More</a></td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -26,7 +26,15 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Listing{
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
+
+	private double average;
+	public void setAverage(double average){
+		this.average = average;
+	}
+	public double getAverage(){
+		return average;
+	}
 
 	@OneToMany(mappedBy="listing",fetch=FetchType.LAZY)
 	private List<Review> reviews;
@@ -94,10 +102,10 @@ public class Listing{
 	@PreUpdate
 	public void onUpdate(){this.updatedAt = new Date();}
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public Date getCreatedAt() {

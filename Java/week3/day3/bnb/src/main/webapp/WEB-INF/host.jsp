@@ -15,6 +15,9 @@
 	</head>
 
 	<body>
+		<c:if test="${user != null}"><a href="/users/new">Logout</a></c:if>
+		<a href="/listings">View Listings</a>
+
 		<h1>Current Listings</h1>
 
 		<table>
@@ -30,7 +33,7 @@
 					<td>${listing.address}</td>
 					<td>${listing.size}</td>
 					<td>${listing.cost}</td>
-					<td>${listing.description}</td>
+					<td><a href="/listings/${listing.id}">${listing.average}/5 - See More</a></td>
 				</tr>
 			</c:forEach>			
 		</table>

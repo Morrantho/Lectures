@@ -3,6 +3,7 @@ package com.project.bnb.controllers;
 import java.security.Principal;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.List;
 
 import java.lang.CharSequence;
 
@@ -46,7 +47,7 @@ public class ListingController{
 		User user;
 
 		if(session.getAttribute("id") != null){
-			user = uS.find( (long) session.getAttribute("id"));
+			user = uS.find( (Long) session.getAttribute("id"));
 			model.addAttribute("user",user);
 		}
 		model.addAttribute("listings",lS.all());
@@ -60,7 +61,7 @@ public class ListingController{
 			System.out.println("NOT IN SESSION");
 			return "redirect:/users/new";
 		}
-		User user = uS.find( (long)session.getAttribute("id") );
+		User user = uS.find( (Long)session.getAttribute("id") );
 		if(!user.isHost()){
 			System.out.println("NOT A HOST, REDIRECTING");
 			return "redirect:/listings";
@@ -74,7 +75,7 @@ public class ListingController{
 	@PostMapping("")
 	public String create(@Valid @ModelAttribute("listing") Listing listing,BindingResult res,HttpSession session){
 		if(session.getAttribute("id") == null){return "redirect:/users/new";}
-		User user = uS.find((long)session.getAttribute("id"));
+		User user = uS.find((Long)session.getAttribute("id"));
 
 		if(!user.isHost()){
 			return "redirect:/listings";
@@ -82,7 +83,9 @@ public class ListingController{
 			if(res.hasErrors()){
 				return "/listings/host";
 			}else{
+				System.out.println("CREATE LISTING: "+user);
 				listing.setUser(user);
+				listing.setAverage(0);
 				lS.create(listing);
 				return "redirect:/listings/host";
 			}
@@ -92,7 +95,7 @@ public class ListingController{
 	@RequestMapping("{id}")
 	public String find(@PathVariable("id") Long id,Model model,HttpSession session){
 		if(session.getAttribute("id") != null){
-			User user = uS.find( (long)session.getAttribute("id"));
+			User user = uS.find( (Long)session.getAttribute("id"));
 			model.addAttribute("user",user);	
 		}
 
@@ -103,7 +106,7 @@ public class ListingController{
 	@RequestMapping("{id}/review")
 	public String review(@PathVariable("id") Long id,HttpSession session,Model model){
 		if(session.getAttribute("id") != null){
-			User user = uS.find( (long)session.getAttribute("id"));
+			User user = uS.find( (Long)session.getAttribute("id"));
 			model.addAttribute("user",user);	
 		}else{
 			return "redirect:/listings/"+id;
@@ -122,38 +125,70 @@ public class ListingController{
 	@PostMapping("{id}/review")
 	public String createReview(@PathVariable("id") Long id,@ModelAttribute("review") Review review, BindingResult res,HttpSession session){
 		if(session.getAttribute("id") == null){return "/listings/"+id+"/review";}
-		User user = uS.find((long)session.getAttribute("id"));
+		User user = uS.find((Long)session.getAttribute("id"));
 		if(user.isHost()){return "/listings";}
 
 		if(res.hasErrors()){
 			return "review";
 		}else{
-			review.setListing(lS.find(id));
+			Listing listing = lS.find(id);
+
+			review.setId(null);
+			List<Review> reviews = listing.getReviews();
+			reviews.add(review);
+			listing.setReviews(reviews);
+
+			double sum = 0;
+
+			for(Review rev: listing.getReviews()){
+				sum += rev.getRating();
+			}
+			sum += review.getRating();
+			sum /= listing.getReviews().size()+1;
+			listing.setAverage(sum);
+
+			review.setListing(listing);
 			review.setUser(user);
 			rS.create(review);
+			lS.update(listing);
+
 			return "redirect:/listings/";
 		}
+	}
+	// Search for part of a word in a string.
+	public boolean scrub(String needle,String haystack){
+		needle = needle.toLowerCase();
+
+		for(int j=0;j<haystack.length()-needle.length()+1;j++){
+			String res = haystack.substring(j,j+needle.length()).toLowerCase();
+			// Found match and listing isnt already pushed
+			if(res.indexOf(needle) != -1){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@RequestMapping("search")
 	public String search(@RequestParam("search") String search,HttpSession session,Model model){
-		search = search.toLowerCase();
 		User user;
 
 		if(session.getAttribute("id") != null){
-			user = uS.find( (long) session.getAttribute("id"));
+			user = uS.find( (Long) session.getAttribute("id"));
 			model.addAttribute("user",user);
 		}
 
 		ArrayList<Listing> allListings = lS.all();
 		ArrayList<Listing> listings = new ArrayList<Listing>();
 
-		for(int i=0; i < allListings.size(); i++){
-			Listing listing = allListings.get(i);
-			// CharSequence seq = search;
-
-			if(listing.getAddress().indexOf(search) != -1){
-				// listings.remove(i);
+		for(Listing listing: allListings){
+			if(scrub(search,listing.getAddress()) && !listings.contains(listing)){
+				listings.add(listing);
+			}
+			if(scrub(search,listing.getSize()) && !listings.contains(listing)){
+				listings.add(listing);
+			}
+			if(scrub(search,Double.toString(listing.getCost())) && !listings.contains(listing)){
 				listings.add(listing);
 			}
 		}
@@ -161,5 +196,21 @@ public class ListingController{
 		model.addAttribute("listings",listings);
 
 		return "guest";
+	}
+
+	@PostMapping("{id}")
+	public String update(@PathVariable("id") Long id,Model model,HttpSession session,@RequestParam("description") String description,@RequestParam("size") String size,@RequestParam("cost") double cost){
+		if(session.getAttribute("id") == null){return "redirect:/users/new";}
+		User user = uS.find((Long)session.getAttribute("id"));
+		// if(!user.isHost()){return "redirect:/listings/"+id;}
+		// if(listing.getUser().getId() != user.getId()){return "redirect:/listings/"+id;}
+
+		Listing listing = lS.find(id);
+		listing.setDescription(description);
+		listing.setSize(size);
+		listing.setCost(cost);
+		listing.setUser(user);
+		lS.update(listing);
+		return "redirect:/"+id;
 	}
 }
