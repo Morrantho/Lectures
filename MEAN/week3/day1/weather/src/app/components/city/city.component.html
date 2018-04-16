@@ -1,0 +1,11 @@
+<div *ngIf="city">
+	<p>{{ city | json }}</p>
+
+	<h1>{{ city.name }} </h1>
+
+	<h1>Humidity: {{city.main.humidity}}</h1>
+	<h1>Average Temperature: {{ city.main.temp }} </h1>
+	<h1>Min Temperature: {{ city.main.temp_min }} </h1>
+	<h1>Max Temperature: {{ city.main.temp_max }} </h1>
+	<h1>Status: {{ city.weather[0].main }} </h1>
+</div>
