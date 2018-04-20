@@ -1,0 +1,35 @@
+<app-listing [listing]="botd" ></app-listing>
+
+<h1>Login</h1>
+
+<form (submit)="login($event)" #loginForm="ngForm" >
+	<h1 *ngIf="!email.valid && !email.pristine" style="color:red;"> You must supply an email! </h1>
+	
+	<p>Email:</p>
+
+	<input 
+		type="text" 
+		name="loginUser.email" 
+		[(ngModel)]="loginUser.email"
+		required
+		#email="ngModel"
+	>
+
+
+	<h1 *ngIf="!password.valid && !password.pristine" style="color:red;"> You're password must be between 8-32 characters!</h1>
+	
+	<p>Password:</p>
+
+	<input type="password" name="loginUser.password" [(ngModel)]="loginUser.password" required minlength="8" maxlength="24" #password="ngModel">
+
+	<input type="submit" value="Login" *ngIf="loginForm.valid" >
+</form>
+
+
+<h1>Register:</h1>
+
+<form (submit)="register()">
+	<input type="text" name="registerUser.email" [(ngModel)]="registerUser.email" >
+	<input type="password" name="registerUser.password" [(ngModel)]="registerUser.password" >
+	<input type="submit" value="Register">
+</form>
