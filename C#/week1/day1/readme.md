@@ -6,13 +6,13 @@
 
 ### Course Overview
 
-* Week 1:
+##Week 1:
 
 * Fundamentals + OOP: Day 1
 * ASP.NET Core: Day 2 - Day 3
 * ASP.Net Core Intermediate: Day 4 - Day 5
 
-* Week 2:
+##Week 2:
 
 * Dapper: Day 6
 * Entity Framework: Day 7
@@ -20,7 +20,7 @@
 * Deployment: Day 9
 * Security + Identity: Day 10
 
-* Week 3:
+##Week 3:
 
 * Scalability: Day 11
 * Catch up: Day 12
@@ -28,7 +28,7 @@
 * Catch up: Day 14
 * BELT EXAM: Day 15 - Mandatory, else no retakes.
 
-* Week 4:
+##Week 4:
 
 * Retake 1: Day 16 - Monday
 * Catch up + Personal Projects: Day 17
