@@ -236,7 +236,7 @@ Functions let us name blocks of our code that we can execute as many times as we
 
 * Create a List that contains strings. Loop your string array and <code>.Add()</code> each of your group members to it. <code>.RemoveAt()</code> the second group member from your List.
 
-* Create a dictionary with the following keys pertaining to one of your group member's info: "name","favoriteMovie","favoriteGenre" and "favoriteLanguage".
+* Create a dictionary with the following keys pertaining to group member your rudely removed from your list: "name","favoriteMovie","favoriteGenre" and "favoriteLanguage".
 
 * Create a function "loop" that iterates your dictionary, printing each key and value.
 
