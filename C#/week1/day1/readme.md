@@ -6,13 +6,13 @@
 
 ### Course Overview
 
-##Week 1:
+## Week 1:
 
 * Fundamentals + OOP: Day 1
 * ASP.NET Core: Day 2 - Day 3
 * ASP.Net Core Intermediate: Day 4 - Day 5
 
-##Week 2:
+## Week 2:
 
 * Dapper: Day 6
 * Entity Framework: Day 7
@@ -20,7 +20,7 @@
 * Deployment: Day 9
 * Security + Identity: Day 10
 
-##Week 3:
+## Week 3:
 
 * Scalability: Day 11
 * Catch up: Day 12
@@ -28,7 +28,7 @@
 * Catch up: Day 14
 * BELT EXAM: Day 15 - Mandatory, else no retakes.
 
-##Week 4:
+## Week 4:
 
 * Retake 1: Day 16 - Monday
 * Catch up + Personal Projects: Day 17
@@ -222,6 +222,45 @@ Functions let us name blocks of our code that we can execute as many times as we
 	int c = add(b,5);
 ```
 
+### Classes:
+
+Classes allow us to define custom objects with their own attributes and actions. They are like blueprints that we create objects from. We can dramatically decrease the amount of code we write with them. We can also have objects inherit from one another, to retrieve all of the members and methods of the parent class. 
+
+```cs
+	class Animal{
+		public string name;
+		public string breed;
+		public int age;
+		public string species;
+		public boolean hasFur;
+		public int hunger = 100;
+
+		public void eat(){
+			Console.WriteLine("Om Nom");
+			hunger += 10;
+		}
+
+		public void run(){
+			Console.WriteLine("*thump thump thump*");
+			hunger -= 10;
+		}
+
+		public void sleep(){
+			Console.WriteLine("Zzz...");
+		}
+
+	}
+
+	class Dog:Animal{ // Inheriting all members and methods of Animal base class.
+		public string sound;
+
+		public void bark(){
+			Console.WriteLine(this.name + " says: "+this.sound);
+			this.hunger--;
+		}
+	}
+```
+
 ### Group Whiteboard:
 
 * Create and name a variable for each of the above types.
@@ -236,7 +275,8 @@ Functions let us name blocks of our code that we can execute as many times as we
 
 * Create a List that contains strings. Loop your string array and <code>.Add()</code> each of your group members to it. <code>.RemoveAt()</code> the second group member from your List.
 
-* Create a dictionary with the following keys pertaining to group member your rudely removed from your list: "name","favoriteMovie","favoriteGenre" and "favoriteLanguage".
+* Create a dictionary with the following keys pertaining to group member you rudely removed from your list: "name","favoriteMovie","favoriteGenre" and "favoriteLanguage".
 
 * Create a function "loop" that iterates your dictionary, printing each key and value.
 
+* Create a Vehicle base class and a sub class for each of your group member's favorite cars, extending the Vehicle class and creating at least one method for your specific car that alters an attribute / member in your Vehicle class.
