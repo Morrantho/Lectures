@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>Slices:</th>
+			<th>Toppings:</th>
+			<th>Size:</th>
+		</tr>
+
+		{% for pizza in pizzas %}
+			<tr>
+				<td>{{ pizza.slices }}</td>
+
+				{% for topping in pizza.toppings.all %}
+				<td>
+					{{ topping.name }}		
+				</td>
+				{% endfor %}
+
+				<td>{{ pizza.size }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+	<h1>Create Pizza:</h1>
+
+	{% if messages %}
+		{% for message in messages %}
+			<h1>{{ message }}</h1>
+		{% endfor %}
+	{% endif %}
+
+	<form action="/create" method="POST">
+		Size (In Inches)<input type="number" value="1" name="size" step="1" >
+		Number of Slices:<input type="number" value="1" name="slices" step="1">
+		<input type="submit" value="Create Pizza!">
+		{% csrf_token %}
+	</form>
+
+	<h1>Create Topping:</h1>
+	<br>
+
+	<form action="/createTopping" method="POST">
+		<p>Topping Name:<input type="text" name="name"></p>
+		
+		<p>Pizza: <select name="pizza" >
+			{% for pizza in pizzas %}
+				<option value="{{pizza.id}}"> {{ pizza.id }} {{ pizza.size }} {{ pizza.slices }} </option>
+			{% endfor %}
+		</select></p>
+
+		<input type="submit" value="Create Topping">
+		{% csrf_token %}
+	</form>
+</body>
+</html>
