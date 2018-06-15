@@ -1,0 +1,10 @@
+<div class="NewNote">
+	{{ task | json }}
+
+	<form (submit)="createNote()" >
+		<p>Title:<input type="text" [(ngModel)]="task.title" name="task.title" ></p>
+		<p>Description:<input type="text" [(ngModel)]="task.description" name="task.description" ></p>
+
+		<input type="submit" value="Create Note">
+	</form>
+</div>
