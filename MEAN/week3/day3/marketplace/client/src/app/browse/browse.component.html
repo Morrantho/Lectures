@@ -1,7 +1,0 @@
-<div class="listings" *ngIf="listings">
-	{{ searchText }}
-
-	<input type="text" name="searchText" [(ngModel)]="searchText" >
-
-	<app-listing *ngFor="let listing of listings | search : searchText" [user]="user" [listing]="listing" ></app-listing>
-</div>

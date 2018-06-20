@@ -1,17 +1,17 @@
 let express    = require("express");
-let app        = express();
-let bodyParser = require("body-parser");
 let session    = require("express-session");
-const port     = 8000;
+let flash      = require("express-flash");
+let bodyParser = require("body-parser");
+let mongoose   = require("mongoose");
+let path       = require("path");
+let bcrypt     = require("bcrypt");
+let port       = 8000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname+"/client/dist"));
-app.use(express.json());
-app.use(session({secret:"hideme"}));
+let app = express();
 
 require("./server/config/mongoose.js");
 require("./server/config/routes.js")(app);
 
 app.listen(port,()=>{
-	console.log("Listening on: "+port);
+	console.log("Listening on:",port)
 });

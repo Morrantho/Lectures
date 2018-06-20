@@ -1,24 +1,16 @@
-let UserController = require("../controllers/UserController.js");
 let ListingController = require("../controllers/ListingController.js");
-let path = require("path");
+let UserController = require("../controllers/UserController.js");
 
-module.exports = (app)=>{
-	app.post("/api/login",UserController.login);
-	app.post("/api/register",UserController.register);
-	app.get("/api/session",UserController.session);
-
-	app.get("/api/clear",UserController.clear);
-
-	app.get("/api/botd",ListingController.botd);
-
-	app.get("/api/listings",ListingController.all);
+module.exports = function(app){
+	/*UserController*/
+	app.post("/api/users/register",UserController.register);
+	app.post("/api/users/login",UserController.login);
+	app.get("/api/users/logout",UserController.logout);
+	app.get("/api/users/:id",UserController.findById);
+	/*ListingController*/
 	app.post("/api/listings",ListingController.create);
-	app.get("/api/listings/:id",ListingController.find);
-
-	app.delete("/api/listings/:id",ListingController.destroy);
+	app.get("/api/listings",ListingController.all);
+	app.get("/api/listings/:id",ListingController.findById);
 	app.put("/api/listings/:id",ListingController.update);
-
-	app.all("*",(req,res,next)=>{
-		res.sendFile(path.resolve("./client/dist/index.html"));
-	});
+	app.delete("/api/listings/:id",ListingController.destroy);
 }
