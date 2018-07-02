@@ -1,143 +1,128 @@
-import java.util.ArrayList;
+import java.lang.Exception;
+import java.lang.Integer;
 
 public class Basic{
-	public static void main(String[] args) {
-		// Basic.print1to255();
-		// Basic.printOdds1to255();
-		// Basic.intsAndSums255();
-		// Basic.iterateAndPrint(new int[]{5,10,15,20});
-		// Basic.printMax(new int[]{45,50,60,30});
-		// Basic.printAvg(new int[]{50,60,70,80,90,100});
-		// System.out.println(Basic.arrOdds1To255());
-		// Basic.squareVals(new int[]{10,20,30,40,50});
-		// Basic.greaterThanY(new int[]{5,10,15,20,25,30},20);
-		// Basic.zeroNegatives(new int[]{10,20,-10,-20});
-		// Basic.minMaxAvg(new int[]{12,14,16,18,20,2,4,6,8,10});
-		// Basic.shiftValsLeft(new int[]{5,10,15,20,25,30});
-		Basic.swapStringForNegatives(new int[]{20,30,-123,-456},"Hello");
-	}
-	// 1
-	public static void print1to255(){
-		for(int i=1; i<256; i++){
-			System.out.println(i);
-		}
-	}
-	// 2
-	public static void printOdds1to255(){
-		for(int i=1; i<256; i+= 2){
-			System.out.println(i);
-		}
-	}
-	// 3
-	public static void intsAndSums255(){
-		int sum = 0;
+    // 1.
+    public static void print1to255(){
+        for(int i=1;i<=255;i++){
+            System.out.println(i);
+        }
+    }
+    // 2.
+    public static void printIntsAndSum0To255(){
+        for(int i=0,sum=0;i<=255;i++,sum+=i){
+            System.out.println(sum);
+        }
+    }
+    // 3.
+    public static void printMaxOfArray(int[] arr){
+       for(int i=1,max=arr[0];i<arr.length;i++){
+           if(max < arr[i])
+               max = arr[i];
+           if(i==arr.length-1)
+               System.out.println(max);
+       }
+    }
+    // 4.
+    public static int[] odds1To255(){
+        int[] a = new int[127];
+        
+        for(int i=0,j=1;j<255;i++,j+=2)
+            a[i] = j;
 
-		for(int i=1;i<256;i++){
-			sum += i;
-		}
+        return a;
+    }
+    // 5.
+    public static void greaterThanY(int[] arr,int y){
+        int numGreater = 0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i] > y){
+                System.out.println(arr[i]);
+                numGreater++;
+            }
+        }
+        System.out.println("Total Nums Greater:"+numGreater);
+    }
+    // 6.
+    public static void minMaxAvg(int[] arr){
+        int min = arr[0];
+        int max = arr[0];
+        int avg = 0;
 
-		System.out.println(sum);
-	}
-	// 4
-	public static void iterateAndPrint(int[] arr){
-		for(int i=0; i<arr.length; i++){
-			System.out.println(arr[i]);
-		}
-	}
-	// 5
-	public static void printMax(int[] arr){
-		int max = 0;
-		for(int i=0; i<arr.length; i++) {
-			if(arr[i] > max) {
-				max = arr[i];
-			}
-		}
-		System.out.println(max);
-	}
-	// 6
-	public static void printAvg(int[] arr){
-		int avg = 0;
+        for(int i=0;i<arr.length;i++){
+            if(max < arr[i]) max = arr[i];
+            if(min > arr[i]) min = arr[i];
+            avg += arr[i];
+        }
+        avg /= arr.length;
+        System.out.println("Min:"+min+" Max: "+max+" Avg: "+avg);
+    }
+    // 7.
+    public static void dojoNegatives(Object[] arr){
+        for(int i=0;i<arr.length;i++){
+            try{
+                int num = (int)arr[i];
+                if(num < 0) arr[i] = "Dojo";
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
 
-		for(int i = 0; i<arr.length; i++) avg+=arr[i];
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+    // 8.
+    public static void printOdds1To255(){
+        for(int i=1;i<=255;i+=2){
+            System.out.println(i);
+        }
+    }
+    // 9.
+    public static void iterate(Object[] arr){
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+    // 10.
+    public static void doAverage(int[] arr){
+        for(int i=1,avg=arr[0];i<arr.length-1;i++,avg+=arr[i]){
+            if(i == arr.length-2) System.out.println("Average: "+avg);
+        }
+    }
+    // 11.
+    public static int[] squares(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            arr[i] = arr[i]*arr[i];
+        }
 
-		avg/=arr.length;
-		System.out.println(avg);
+        return arr;
+    }
+    // 12.
+    public static int[] remNegs(int[] arr){
+        for(int i=0;i<arr.length;i++) if(arr[i] < 0) arr[i] = 0;
+        return arr;
+    }
+    // 13.
+    public static int[] shiftVals(int[] arr){
+        for(int i=0;i<arr.length-1;i++)
+            arr[i] = arr[i+1];
+        arr[arr.length-1] = 0;
 
-	}
-	// 7
-	public static ArrayList<Integer> arrOdds1To255(){
-		ArrayList<Integer> array = new ArrayList<Integer>();
+        return arr;
+    }
 
-		for (int i=1; i <256; i+=2){
-			array.add(i);
-		}
-
-		return array;
-	}
-	// 8
-	public static void squareVals(int[] arr){
-		for(int i = 0; i< arr.length; i++){
-			arr[i] = arr[i]*arr[i];
-			System.out.println(arr[i]);
-		}
-	}
-	// 9
-	public static void greaterThanY(int[] arr,int y){
-		for(int i = 0; i< arr.length; i++){
-			if(arr[i] > y){
-				System.out.println(arr[i]);
-			}
-		}
-	}
-	// 10
-	public static void zeroNegatives(int[] arr){
-		for (int i=0; i<arr.length; i++){
-			if(arr[i]<0){
-				arr[i]=0;
-			}
-			System.out.println(arr[i]);
-		}
-	}
-	// 11
-	public static void minMaxAvg(int[] arr){
-		int sum=0;
-		int min=arr[0];
-		int max=min;
-		for(int i=0; i<arr.length; i++){
-			sum+=arr[i];
-			if(arr[i] < min)
-				min = arr[i];
-			if(arr[i] > max)
-				max = arr[i];
-		}
-		int average = sum/arr.length;
-		System.out.println(min);
-		System.out.println(max);
-		System.out.println(average);
-	}
-	// 12
-	public static void shiftValsLeft(int[] arr){
-		for(int i=0; i<arr.length-1; i++){
-			arr[i] = arr[i+1];
-		}
-		arr[arr.length -1] = 0;
-
-		for(int i=0;i<arr.length;i++)
-			System.out.println(arr[i]);
-	}
-	// 13
-	public static void swapStringForNegatives(int[] arr,String str){
-		ArrayList<Object> array = new ArrayList<Object>();
-
-		for (int i = 0; i<arr.length; i++ ){
-			if(arr[i] < 0){
-				array.add(str);
-			}
-			else {
-				array.add(arr[i]);
-			}
-		}
-
-		System.out.println(array);
-	}
+    public static void main(String[] args){
+        //Basic.print1to255();
+        //Basic.printIntsAndSum0To255();
+        //Basic.printMaxOfArray(new int[]{50,3,65,12,94});
+        //Basic.odds1To255();
+        //Basic.greaterThanY(new int[]{5,15,4,12,7,19},10);
+        //Basic.minMaxAvg(new int[]{50,10,20,30,40}); 
+        //Basic.dojoNegatives(new Object[]{10,20,-40,15,-60});
+        // Basic.printOdds1To255();
+        // Basic.iterate(new Object[]{10,20,30,40,50});
+        // Basic.doAverage(new int[]{123,123,145,6,23,6,245,6});
+        // Basic.shiftVals(new int[]{12,5,3,6,2,35});
+    }
 }
