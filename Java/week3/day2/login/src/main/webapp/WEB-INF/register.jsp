@@ -9,19 +9,21 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Index</title>
-		<link rel="stylesheet" type="text/css" href="/css/style.css">	
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="/js/main.js"></script>
+		<link rel="stylesheet" href="/css/style.css">
+		<title>Index</title>
 	</head>
 
 	<body>
 		<c:if test="${registerError != null}">
-			<p>${registerError}</p>			
+			<p >${registerError}</p>			
 		</c:if>
 		
 		<c:if test="${errors != null}">
 			<c:forEach items="${errors}" var="error">
-				<p>${error.defaultMessage}</p>
+				<p class="red">${error.defaultMessage}</p>
 			</c:forEach>		
 		</c:if>		
 	
